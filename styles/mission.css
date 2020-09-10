@@ -1,0 +1,35 @@
+body {
+    font-family: 'Source Sans Pro', 'Trebuchet MS', Arial;
+    font-size: 14px;
+    color: #2c2c2c;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    overflow: hidden;
+}
+
+#websitesrc{
+    font-weight: 400;
+    font-family: "Arial Italic", Arial, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    margin: 0px; 
+}
+h2{
+    font-family: "Arial Bold", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(0, 140, 140);
+    font-size: 15px;
+}
+
+p li{
+    margin: 0px; 
+    font-family: Arial, sans-serif;
+    font-weight: 400; 
+    font-size: 15px;
+}

@@ -1,0 +1,2 @@
+Intégrer les onglets : 
+-Afficher les différents fichiers html selon le clic avec JS? 

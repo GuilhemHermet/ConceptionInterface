@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--Font Awesome-->
+        <script src="https://kit.fontawesome.com/fabb441907.js" crossorigin="anonymous"></script>
+        <!--JavaScript-->
+        <script src="../scripts/script.js"></script>
+        <!--CSS-->
         <link rel="stylesheet" href="../styles/stats.css">
     </head>
  <body>
 
+    <div class="header">
+        <div class="title-sign-in">
+            <div class="left-title-div"></div>
+            <div class="center-title-div">
+            <h1>Frigocommunautaire</h1>
+            </div>
+            <div class="right-title-div">
+                <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>   
+            <div>Membres</div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <ul id="navigationbar">
+            <li><a class="active" href="../pages/mission.html">Mission</a></li>
+            <li class="active-tab"><a href="../pages/stats.html">Stats</a></li>
+            <li><a href="../pages/reglement.html">Règlement</a></li>
+            <li><a href="../pages/inscription.html">Inscription</a></li>
+        </ul>
+    </div> 
+
+    <div id="stats">
     <p>Depuis sa création en janvier 2019...</p>
 
     <p><b id="premierMot">Frigocommunautaire.com</b> a évité le gaspillage alimentaire de:</p>
@@ -28,6 +55,6 @@
         <br>-2 plats comparé à juin 2020
         </li>
     </ul>
-
+</div>
  </body>   
 </html>

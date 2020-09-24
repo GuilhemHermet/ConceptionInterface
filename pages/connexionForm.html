@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../scripts/script.js"></script>
+    <link rel="stylesheet" href="../styles/connexionForm.css">
+</head>
+<body>
+
+<div class="container" id="connexionForm">
+    <form action="" method="get" class="form-connexion">
+        <h1>Accès à l'espace membre</h1>
+        <div class="form-ligne form-group">
+            <label class="text-label pl-2" for="username"> 
+                <span class="font-weight-bold">
+                    Nom d'utilisateur
+                </span> 
+            </label>
+            <div class="text-enter">
+                <input class="form-control form-control-sm" type="text" name="username" id="username" required>
+            </div> 
+        <div>
+        <div class="form-ligne form-group">
+            <label class="text-label pl-2" for="password">
+                <span class="font-weight-bold">
+                    Mot de passe
+                </span> 
+            </label>
+            <div class="text-enter">
+                <input class="form-control form-control-sm" type="text" name="password" id="password" required>   
+            </div>
+        </div>
+
+        <div class="buttonForm">
+            <button type="button" class="btn cancel" onclick="closeForm()">Annuler</button>
+            <button type="submit" class="btn" onclick="closeForm()">Connecter</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

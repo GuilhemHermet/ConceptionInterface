@@ -2,22 +2,35 @@
 <html lang="fr">
 <html>
 <head>
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/fabb441907.js" crossorigin="anonymous"></script>
+  <!--JavaScript-->
+  <script src="../scripts/script.js"></script>
+  <!--CSS-->
   <link rel="stylesheet" href="../styles/mission.css">
 </head>
 <body>
 
-<div id="header">
-
-  <h1>Frigocommunautaire</h1>
-
-  <ul id="navigationbar">
-    <li><a class="active" href="#mission">Mission</a></li>
-    <li><a href="#stats">Stats</a></li>
-    <li><a href="#reglement">Règlement</a></li>
-    <li><a href="#inscription">Inscription</a></li>
-  </ul>
-
+  <div class="header">
+    <div class="title-sign-in">
+        <div class="left-title-div"></div>
+        <div class="center-title-div">
+        <h1>Frigocommunautaire</h1>
+        </div>
+        <div class="right-title-div">
+          <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>
+        <div>Membres</div>
+        </div>
+    </div>
 </div>
+<div class="header">
+    <ul id="navigationbar">
+        <li class="active-tab"><a class="active" href="../pages/mission.html">Mission</a></li>
+        <li><a href="../pages/stats.html">Stats</a></li>
+        <li><a href="../pages/reglement.html">Règlement</a></li>
+        <li><a href="../pages/inscription.html">Inscription</a></li>
+    </ul>
+</div> 
 
 
 <div id='mission'>
@@ -44,5 +57,7 @@
 </p>
 
 </div>
+
+
 </body>
 </html>

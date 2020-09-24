@@ -1,0 +1,15 @@
+#main-container{
+    width: 30%;
+}
+
+.text-label{
+    color : #008C8C;
+}
+
+#reglement-lien{
+    color: grey;
+}
+
+#submit-btn{
+    background-color : #008C8C;   
+}

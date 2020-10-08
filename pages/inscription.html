@@ -18,16 +18,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </head>
-    <body>
+    <body id="body">
         <div class="header">
             <div class="title-sign-in">
                 <div class="left-title-div"></div>
                 <div class="center-title-div">
-                    <h1>Frigocommunautaire</h1>
+                    <h1 id="titre">Frigocommunautaire</h1>
                 </div>
                 <div class="right-title-div">
-                    <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>
-                    <div>Membres</div>
+                    <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt" id="btn-member"></i></button>
+                    <div id="membres">Membres</div>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                                 (mélange de lettres et de chiffres) 
                             </label>
                             <div class="text-enter">
-                                <input class="form-control form-control-sm" id="verif-champ1" type="password" name="password" id="password">
+                                <input class="form-control form-control-sm" id="verif-champ1" type="password" name="password">
                             </div>  
                         </div>
                         <div class="form-ligne form-group">
@@ -86,7 +86,7 @@
                                 (confirmation) 
                             </label>
                             <div class="text-enter">  
-                                <input class="form-control form-control-sm" id="verif-champ2" type="password" name="password-confirm" id="password-confirm" >
+                                <input class="form-control form-control-sm" id="verif-champ2" type="password" name="password-confirm">
                             </div>  
                         </div>
                         <div id="verif-champ3-nom" class="form-check pl-0">

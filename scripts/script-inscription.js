@@ -10,7 +10,28 @@ $(function(){
 
             return false;
         } else {
-            $("#form-inscription").submit();
+            let name = $("#name").val();
+            let email = $("#email").val();
+            let password = $("#verif-champ1").val();
+            let passwordconfirm = $("#verif-champ2").val();
+            let json = {"name" :"", "email":"", "password":""};
+            json.name=name;
+            json.email=email;
+            json.password=password;
+            console.log(json);
+
+            let postRequest = new Request("http://127.0.0.1:3000/", {method: 'POST', body: JSON.stringify(json)})
+
+            fetch(postRequest)
+            .then(response =>{
+                if(response.status === 200){
+                    console.log("coucou");
+                } else {
+                    throw new Error("Failed to send the request");
+                }
+            })
+
+            return false;
         } 
         
     })

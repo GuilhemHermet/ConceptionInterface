@@ -4,6 +4,23 @@
     }
 }
 
+#body {
+    margin : 8px;
+}
+
+#titre {
+    padding-top: 2%;
+}
+
+#btn-member{
+    padding-top:5px;
+}
+
+#membres{
+    margin-bottom:25px;
+
+}
+
 .header-title:hover {
     text-decoration: none;
     color:white;

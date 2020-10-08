@@ -35,7 +35,7 @@ $(function(){
             fetch(postRequest)
             .then(response =>{
                 if(response.status === 200){
-                    console.log("La requête a atteint le serveur");
+                    console.log("La requête a atteint le serveur !");
                     $('#myModal').modal('show');
                 } else {
                     throw new Error("Failed to send the request");
@@ -46,8 +46,7 @@ $(function(){
     })
 
     $("#retour-mission").click(()=> {
-        $('#myModal').modal('hide');
-        window.location.href = "../pages/mission.html";
+        window.location.replace("../pages/mission.html");
     })
   
   });

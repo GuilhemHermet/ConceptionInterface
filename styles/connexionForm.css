@@ -1,8 +1,9 @@
+/*
 body{
   background-color: rgba(121, 121, 121, 1);
-}
+}*/
 
-.container {
+.container-connexion {
   width: 60%;
   height: 40%;
   display:block;
@@ -25,7 +26,7 @@ body{
   color:#8C8C8C;
 }
 
-h1{
+.header1{
   font-family:'Arial Bold', 'Arial', sans-serif;
   font-weight:700;
 }
@@ -35,10 +36,10 @@ hr{
   border-radius:1px;
 }
 
-.form-connexion .form-text .text-enter{
+.form-connexion .form-text .text-enter .form-control{
   font-family:'Arial', sans-serif;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 3px;
   font-size:13px;
   color:#8C8C8C;
   border-color:rgba(121, 121, 121, 1);
@@ -52,9 +53,14 @@ avec width et height*/
   color:#8C8C8C;
 }
   
+
+.buttonForm {
+  display: flex;
+  justify-content: flex-end;
+}
 /* Set a style for the connexion button */
 .form-connexion .btn-connect {
-  background-color:rgba(0, 140, 140, 1);
+  background-color:rgb(79, 145, 145);
   border:none;
   border-radius:5px;
   font-size:18px;

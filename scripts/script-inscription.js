@@ -30,13 +30,15 @@ $(function(){
             json.password=password;
             console.log(json);
 
+            $('#myModal').modal('show');
+
             let postRequest = new Request("http://127.0.0.1:3000/", {method: 'POST', body: JSON.stringify(json)})
 
             fetch(postRequest)
             .then(response =>{
                 if(response.status === 200){
                     console.log("coucou");
-                    $('#myModal').modal('show');
+                    
                 } else {
                     throw new Error("Failed to send the request");
                 }

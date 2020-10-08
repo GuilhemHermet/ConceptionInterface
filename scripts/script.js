@@ -10,3 +10,5 @@ function closeForm(){
     document.getElementById("connexionForm").style.display = "none";
     document.body.style.backgroundColor = "white";
 }
+
+

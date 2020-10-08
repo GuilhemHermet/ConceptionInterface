@@ -4,6 +4,11 @@
     }
 }
 
+.header-title:hover {
+    text-decoration: none;
+    color:white;
+}
+
 #main-container{
     margin-top: 25px;
 }
@@ -13,9 +18,10 @@
 }
 
 #reglement-lien{
-    color: grey;
+    color: gray;
 }
 
 #submit-btn{
     background-color : #008C8C;   
 }
+

@@ -5,7 +5,8 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/fabb441907.js" crossorigin="anonymous"></script>
     <!--JavaScript-->
-    <script src="../scripts/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../scripts/script-inscription.js"></script>
     <!-- CSS Perso Override -->
     <link rel="stylesheet" href="../styles/inscription.css">
     <link rel="stylesheet" href="../styles/responsive.css">
@@ -34,16 +35,16 @@
         <div class="body-container">
             <div class="header-tabs">
                 <ul id="navigationbar">
-                    <li><a href="../pages/mission.html">Mission</a></li>
-                    <li><a href="../pages/stats.html">Stats</a></li>
-                    <li><a href="../pages/reglement.html">Règlement</a></li>
-                    <li class="active-tab"><a href="../pages/inscription.html">Inscription</a></li>
+                    <li><a href="../pages/mission.html" class="header-title">Mission</a></li>
+                    <li><a href="../pages/stats.html" class="header-title">Stats</a></li>
+                    <li><a href="../pages/reglement.html" class="header-title">Règlement</a></li>
+                    <li class="active-tab header-title ><a href="../pages/inscription.html">Inscription</a></li>
                 </ul>
             </div> 
         
             <div class="body">
                 <div class="container" id="main-container">
-                    <form action="" method="get" class="form-inscription">
+                    <form action="/conceptionInterface/scripts/Server.js" method="post" id="form-inscription">
                         <div class="form-ligne form-group">
                             <label class="text-label pl-2" for="name"> 
                                 <span class="font-weight-bold">
@@ -52,7 +53,7 @@
                                 (prénom + nom de famille) 
                             </label>
                             <div class="text-enter">
-                                <input class="form-control form-control-sm" type="text" name="name" id="name" required>
+                                <input class="form-control form-control-sm" type="text" name="name" id="name" >
                             </div>  
                         </div>
                         <div class="form-ligne form-group">
@@ -63,7 +64,7 @@
                                 (sera votre nom d'utilisateur) 
                             </label>
                             <div class="text-enter">
-                                <input class="form-control form-control-sm" type="email" name="email" id="email" required>   
+                                <input class="form-control form-control-sm" type="email" name="email" id="email" >   
                             </div>
                         </div>
                         <div class="form-ligne form-group">
@@ -74,7 +75,7 @@
                                 (mélange de lettres et de chiffres) 
                             </label>
                             <div class="text-enter">
-                                <input class="form-control form-control-sm" type="password" name="password" id="password" required>
+                                <input class="form-control form-control-sm" id="verif-champ1" type="password" name="password" id="password">
                             </div>  
                         </div>
                         <div class="form-ligne form-group">
@@ -85,11 +86,11 @@
                                 (confirmation) 
                             </label>
                             <div class="text-enter">  
-                                <input class="form-control form-control-sm" type="password" name="password-confirm" id="password-confirm" required>
+                                <input class="form-control form-control-sm" id="verif-champ2" type="password" name="password-confirm" id="password-confirm" >
                             </div>  
                         </div>
                         <div class="form-check pl-0">
-                            <input  type="checkbox" name="checkbox" id="checkbox" required>
+                            <input  type="checkbox" name="checkbox verif-champ3" id="checkbox" >
                             <label class="form-check-label text-muted" for="checkbox">J'ai lu et j'accepte le <a id="reglement-lien" href="https://google.com">règlement</a> </label>
                         </div>
                         <div class="form-submit float-right mt-4">

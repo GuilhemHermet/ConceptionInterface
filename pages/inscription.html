@@ -17,7 +17,7 @@
     <body>
         <div class="container" id="main-container">
             <form action="" method="get" class="form-inscription">
-                <div class="form-ligne form-group">
+                <div class="form-group">
                     <label class="text-label pl-2" for="name"> 
                         <span class="font-weight-bold">
                             Nom complet
@@ -28,7 +28,7 @@
                         <input class="form-control form-control-sm" type="text" name="name" id="name" required>
                     </div>  
                 </div>
-                <div class="form-ligne form-group">
+                <div class="form-group">
                     <label class="text-label pl-2" for="email">
                         <span class="font-weight-bold">
                             E-mail
@@ -39,27 +39,31 @@
                         <input class="form-control form-control-sm" type="email" name="email" id="email" required>   
                     </div>
                 </div>
-                <div class="form-ligne form-group">
-                    <label class="text-label pl-2" for="password">
-                        <span class="font-weight-bold">
-                            Mot de passe 
-                        </span>
-                        (mélange de lettres et de chiffres) 
-                    </label>
+                <div class="form-group">
+                    <div class="form-ligne">
+                        <label class="text-label pl-2" for="password">
+                            <span class="font-weight-bold">
+                                Mot de passe 
+                            </span>
+                            (mélange de lettres et de chiffres) 
+                        </label>
+                    </div>
                     <div class="text-enter">
                         <input class="form-control form-control-sm" type="password" name="password" id="password" required>
-                    </div>  
+                    </div>
                 </div>
-                <div class="form-ligne form-group">
-                    <label class="text-label pl-2" for="password-confirm">
-                        <span class="font-weight-bold">
-                            Mot de passe
-                        </span> 
-                        (confirmation) 
-                    </label>
+                <div class="form-group">
+                    <div class="form-ligne">
+                        <label class="text-label pl-2" for="password-confirm">
+                            <span class="font-weight-bold">
+                                Mot de passe
+                            </span> 
+                            (confirmation) 
+                        </label>
+                    </div> 
                     <div class="text-enter">  
                         <input class="form-control form-control-sm" type="password" name="password-confirm" id="password-confirm" required>
-                    </div>  
+                    </div>
                 </div>
                 <div class="form-check pl-0">
                     <input  type="checkbox" name="checkbox" id="checkbox" required>

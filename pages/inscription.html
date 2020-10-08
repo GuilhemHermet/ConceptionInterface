@@ -78,7 +78,7 @@
                                 <input class="form-control form-control-sm" id="verif-champ1" type="password" name="password">
                             </div>  
                         </div>
-                        <div class="form-ligne form-group">
+                        <div class="form-ligne form-group" id="form-confirm">
                             <label class="text-label pl-2" for="password-confirm">
                                 <span class="font-weight-bold">
                                     Mot de passe
@@ -100,5 +100,30 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bienvenue</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Félicitations et bienvenues à Frigocommunautaires.com.<br/>
+                    Accédez à l'espace membre et dès aujourd'hui commencez à partager vos excédents de nourriture.
+                </div>
+                <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary" id="retour-mission">OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
     </body>
 </html>

@@ -8,12 +8,22 @@ $(function(){
 
             $("#verif-champ3-nom").css("border-bottom","3px solid red");
 
-            return false;
         } else {
             let name = $("#name").val();
             let email = $("#email").val();
             let password = $("#verif-champ1").val();
             let passwordconfirm = $("#verif-champ2").val();
+            if(password !== passwordconfirm){
+
+                $("#verif-champ1").css("border","3px solid red");
+
+                $("#verif-champ2").css("border","3px solid red");
+
+                $("#form-confirm").append($("<div />").text("Les deux mots de passes doivent être les mêmes").css("color","red"));
+
+                return false;
+            }
+
             let json = {"name" :"", "email":"", "password":""};
             json.name=name;
             json.email=email;
@@ -26,14 +36,19 @@ $(function(){
             .then(response =>{
                 if(response.status === 200){
                     console.log("coucou");
+                    $('#myModal').modal('show');
                 } else {
                     throw new Error("Failed to send the request");
                 }
             })
-
-            return false;
+            
         } 
-        
+        return false; // permet de ne pas perform l'envoi du form.
+    })
+
+    $("#retour-mission").click(()=> {
+        $('#myModal').modal('hide');
+        window.location.href = "../pages/mission.html";
     })
   
   });

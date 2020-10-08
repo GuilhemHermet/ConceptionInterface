@@ -10,7 +10,10 @@ $(function(){
 
             $(".verif-champ3").css("border-width","3px");
             $(".verif-champ3").css("border-color","red");
+
             return false;
+        } else {
+            $("#form-inscription").submit();
         } 
         
     })

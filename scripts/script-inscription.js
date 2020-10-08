@@ -47,6 +47,7 @@ $(function(){
 
     $("#retour-mission").click(()=> {
         $('#myModal').modal('hide');
+        window.location.href = "../pages/mission.html";
     })
   
   });

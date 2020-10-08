@@ -1,0 +1,85 @@
+body{
+  background-color: rgba(121, 121, 121, 1);
+}
+
+.container {
+  width: 60%;
+  height: 40%;
+  display:block;
+  margin: auto;
+  margin-top: 5%;
+  padding: 10px;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  max-width:335px;
+  max-height:250px;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+}
+
+.form-connexion {
+  font-family: 'Arial', sans-serif;
+  font-style:normal;
+  font-size:12px;
+  color:#8C8C8C;
+}
+
+h1{
+  font-family:'Arial Bold', 'Arial', sans-serif;
+  font-weight:700;
+}
+
+hr{
+  margin:none;
+  border-radius:1px;
+}
+
+.form-connexion .form-text .text-enter{
+  font-family:'Arial', sans-serif;
+  width: 100%;
+  border-radius: 10px;
+  font-size:13px;
+  color:#8C8C8C;
+  border-color:rgba(121, 121, 121, 1);
+  box-sizing: border-box;
+
+}
+/*ça ne foncionne pas quand j'essaie de changer la taille des boites
+avec width et height*/
+
+.form-connexion .form-text .text-enter .form-control{
+  color:#8C8C8C;
+}
+  
+/* Set a style for the connexion button */
+.form-connexion .btn-connect {
+  background-color:rgba(0, 140, 140, 1);
+  border:none;
+  border-radius:5px;
+  font-size:18px;
+  color:white;
+  text-align: center;
+  padding:7px 18px 7px 18px;
+  cursor: pointer;
+}
+/*ça ne fonctionne pas quand j'essaie de positionner les boutons 
+avec top, left, right, bottom*/
+
+/* Set a style for the cancel button */
+.form-connexion .btn-cancel {
+  background-color: white;
+  font-size:18px;
+  color:#008C8C;
+  border: none;
+  cursor: pointer;
+}
+  
+/* Change color when hover */
+.form-connexion .btn-connect:hover{
+  background-color:rgba(0, 140, 140, 0.8);
+}
+
+.form-connexion .btn-cancel:hover{
+  color:#3c8ef8;
+}

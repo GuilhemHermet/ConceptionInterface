@@ -1,5 +1,11 @@
+@media screen and (min-width: 1200px) {
+    #main-container{
+        width: 30%;
+    }
+}
+
 #main-container{
-    width: 30%;
+    margin-top: 25px;
 }
 
 .text-label{

@@ -7,6 +7,7 @@
         <script src="../scripts/script.js"></script>
         <!--CSS-->
         <link rel="stylesheet" href="../styles/stats.css">
+        <link rel="stylesheet" href="../styles/responsive.css">
     </head>
  <body>
 
@@ -14,47 +15,54 @@
         <div class="title-sign-in">
             <div class="left-title-div"></div>
             <div class="center-title-div">
-            <h1>Frigocommunautaire</h1>
+                <h1>Frigocommunautaire</h1>
             </div>
             <div class="right-title-div">
-                <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>   
-            <div>Membres</div>
+                <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>
+                <div>Membres</div>
             </div>
         </div>
     </div>
-    <div class="header">
-        <ul id="navigationbar">
-            <li><a class="active" href="../pages/mission.html">Mission</a></li>
-            <li class="active-tab"><a href="../pages/stats.html">Stats</a></li>
-            <li><a href="../pages/reglement.html">Règlement</a></li>
-            <li><a href="../pages/inscription.html">Inscription</a></li>
-        </ul>
-    </div> 
 
-    <div id="stats">
-    <p>Depuis sa création en janvier 2019...</p>
+    <div class="body-container">
+        <div class="header-tabs">
+            <ul id="navigationbar">
+                <li><a href="../pages/mission.html">Mission</a></li>
+                <li class="active-tab"><a href="../pages/stats.html">Stats</a></li>
+                <li><a href="../pages/reglement.html">Règlement</a></li>
+                <li><a href="../pages/inscription.html">Inscription</a></li>
+            </ul>
+        </div> 
+        
+        <div class="body">
+            <div id="stats">
+                <p>Depuis sa création en janvier 2019...</p>
+            
+                <p><b id="premierMot">Frigocommunautaire.com</b> a évité le gaspillage alimentaire de:</p>
+            
+                <ul>
+                    <li>1 430 plats</li>
+                    +150 plats en juillet 2020
+                </ul>
+            
+                <p><b id="premierMot">On</b> a déposé:</p>
+                <ul>
+                    <li>1 678 plats 
+                    <br><span style="color: #F59A23">BRAVO!</span> +205 plats en juillet 2020
+                    </li>
+                </ul>
+            
+                <p><b id="premierMot">On</b> a fournis à Ville en vert pour le compostage :</p>
+                <ul>
+                    <li>248 plats
+                        <br>+15 plats en juillet 2020 
+                        <br>-2 plats comparé à juin 2020
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <p><b id="premierMot">Frigocommunautaire.com</b> a évité le gaspillage alimentaire de:</p>
 
-    <ul>
-        <li>1 430 plats</li>
-        +150 plats en juillet 2020
-    </ul>
-
-    <p><b id="premierMot">On</b> a déposé:</p>
-    <ul>
-        <li>1 678 plats 
-        <br><span style="color: #F59A23">BRAVO!</span> +205 plats en juillet 2020
-        </li>
-    </ul>
-
-    <p><b id="premierMot">On</b> a fournis à Ville en vert pour le compostage :</p>
-    <ul>
-        <li>248 plats
-        <br>+15 plats en juillet 2020 
-        <br>-2 plats comparé à juin 2020
-        </li>
-    </ul>
-</div>
  </body>   
 </html>

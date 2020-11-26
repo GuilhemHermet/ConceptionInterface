@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+<head>
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/fabb441907.js" crossorigin="anonymous"></script>
+  <!--JavaScript-->
+  <script src="../scripts/script.js"></script>
+  <!--CSS-->
+  <link rel="stylesheet" href="../styles/plats.css">
+  <link rel="stylesheet" href="../styles/responsive.css">
+  <link rel="stylesheet" href="../styles/connexionForm.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-sign-in">
+        <div class="left-title-div"></div>
+        <div class="center-title-div">
+            <h1>Frigocommunautaire</h1>
+        </div>
+        <div class="right-title-div">
+            <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-shopping-basket"></i></button>
+            <div>Membres</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="body-container">
+    <div class="header-tabs">
+    </div> 
+    <div class="grid-container">
+        <div class="grid-item">
+            <!-- Go mettre la liste des plats de gauche ici-->
+        </div>
+        <div class="grid-item">
+            <!-- Go mettre la liste des plats de centre gauche ici-->
+        </div>
+        <div class="grid-item">
+            <!-- Go mettre la liste des plats de centre droite ici-->
+        </div>
+        <div class="grid-item">
+            <!-- Go mettre la liste des plats de droite ici-->
+        </div>
+    </div>
+    <div class="body">
+
+    </div>
+  </div>
+
+
+  <dialog id="dialogbox">
+    <div class="container-connexion" id="connexionForm" >
+        <form action="" method="get" class="form-connexion">
+            <h1 id="header1">Accès à l'espace membre</h1>
+            <hr>
+            <div class="form-text">
+                <label class="text-label-username" for="username"> 
+                    <span class="font-normal">
+                        Nom d'utilisateur
+                    </span> 
+                </label>
+                <div class="text-enter">
+                    <input class="form-control" type="text" name="username" id="username" required>
+                </div> 
+            <div>
+            <div class="form-text">
+                <label class="text-label-password" for="password">
+                    <span class="font-normal">
+                        Mot de passe
+                    </span> 
+                </label>
+                <div class="text-enter">
+                    <input class="form-control" type="text" name="password" id="password" required>   
+                </div>
+            </div>
+            <hr>
+            <div class="buttonForm">
+                <button type="button" class="btn-cancel" onclick="closeForm()">Annuler</button>
+                <button type="submit" class="btn-connect" onclick="closeForm()">Connecter</button>
+            </div>
+        </form>
+    </div>
+  </dialog>
+
+</body>
+</html>

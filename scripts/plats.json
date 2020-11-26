@@ -1,0 +1,47 @@
+{
+"plats": [
+
+{
+    "nom": "Salade",
+    "categorie": "Salades",
+    "dateDePeremption":"02/12/2020",
+    "allergenes":"blablabla"
+},
+
+{
+    "nom": "Fromage",
+    "categorie": "Fromage",
+    "dateDePeremption":"25/11/2020",
+    "allergenes":"blablabla"
+},
+
+{
+    "nom": "Gâteau",
+    "categorie": "Dessert",
+    "dateDePeremption":"28/11/2020",
+    "allergenes":"blablabla"
+},
+
+{
+    "nom": "Spaghetti",
+    "categorie": "Pâtes",
+    "dateDePeremption":"10/12/2020",
+    "allergenes":"blablabla"
+},
+
+{
+    "nom": "Sandwich au thon",
+    "categorie": "Sandwich",
+    "dateDePeremption":"5/12/2020",
+    "allergenes":"blablabla"
+},
+
+{
+    "nom": "Sushi",
+    "categorie": "Poisson",
+    "dateDePeremption":"30/11/2020",
+    "allergenes":"blablabla"
+}
+
+]
+}

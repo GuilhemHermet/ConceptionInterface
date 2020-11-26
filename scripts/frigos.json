@@ -1,0 +1,67 @@
+{
+"frigos":[
+{
+    "nom": "FrigoVégétarien",
+    "adresse": "333 rue des Légumes",
+    "distance": "3.3 km",
+    "disponible": "true", 
+    "statut": "ouvert"
+},
+
+{
+    "nom": "FrigoTechno",
+    "adresse": "34 rue des Disques Durs",
+    "distance": "3.5 km",
+    "disponible": "false", 
+    "statut": "fermé pour entretien"
+},
+
+{
+    "nom": "FrigoCarnivore",
+    "adresse": "89 rue des Moutons",
+    "distance": "4.2 km",
+    "disponible": "true", 
+    "statut": "ouvert"
+},
+
+{
+    "nom": "FrigoMusical",
+    "adresse": "905 avenue Queen",
+    "distance": "6 km",
+    "disponible": "true", 
+    "statut": "ouvert"   
+},
+
+{
+    "nom": "PolyFrigo",
+    "adresse": "666 boulevard des Étudiants Honnêtes",
+    "distance": "7.9 km",
+    "disponible": "true", 
+    "statut": "ouvert"
+},
+
+{
+    "nom": "FrigoMondial",
+    "adresse": "45 avenue de la Culture",
+    "distance": "9.7 km",
+    "disponible": "false", 
+    "statut": "fermé pour nettoyage"
+},
+
+{
+    "nom": "FrigoNature",
+    "adresse": "9 rue des Arbres",
+    "distance": "12.4 km",
+    "disponible": "false", 
+    "statut": "fermé pour entretien"
+},
+
+{
+    "nom": "FrigoMathématique",
+    "adresse": "314 rue Pi",
+    "distance": "14.5 km",
+    "disponible": "true", 
+    "statut": "ouvert"
+}
+]
+}

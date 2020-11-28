@@ -86,12 +86,13 @@ class CcListeFrigos extends HTMLElement {
         <style>
         .grid-container {
             display: grid;
-            grid-template-columns: 25% 70% 5%; //25% pour l'image de frigo et 75% pour ses informations 
+            grid-template-columns: 25% 60% 10%; //25% pour l'image de frigo et 75% pour ses informations 
             padding: 10px;
           }
           .grid-item {
-            font-size: 25px;
-            text-align: center;
+            font-size: 15px;
+            text-align: left;
+            line-height: 10px;
             font-family: Arial, Helvetica, sans-serif;
           }
             .frame {
@@ -103,6 +104,9 @@ class CcListeFrigos extends HTMLElement {
             h1, h2 {
                 color:black;
             }
+            .sous-paragraphe {
+                font-size: 13px; 
+            }
         </style>
         <template id="template-frigo" class="grid-container">
             <div class="grid-container frame">
@@ -113,7 +117,7 @@ class CcListeFrigos extends HTMLElement {
                 <div class="grid-item"  id="cadre">
                      <h2 id="nom"></h2>
                       <p id="adresse"></p>
-                      <p id="Raison-Non-Disponibilite"></p>
+                      <p class="sous-paragraphe" id="Raison-Non-Disponibilite"></p>
                  </div>
 
                  <div class="grid-item">
@@ -140,12 +144,12 @@ class CcListeFrigos extends HTMLElement {
             clone.querySelector('#distance').innerHTML = frigo.distance;
             if (frigo.disponible === "false") {
                 clone.querySelector('#Raison-Non-Disponibilite').innerHTML = frigo.statut;
-                clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoRouge.png');
+                clone.querySelector('#photo-frigo').setAttribute("src", '../assets/FrigoRouge.png');
             }
             else {
-                clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoVert.png');
+                clone.querySelector('#photo-frigo').setAttribute("src", '../assets/FrigoVert.png');
             }
-            clone.querySelector('#photo-frigo').setAttribute("width", "100%");  
+            clone.querySelector('#photo-frigo').setAttribute("width", "50%");  
             clone.querySelector('#photo-frigo').setAttribute("height", "100%");
             //ajoute le clone au shadow DOM
             this.result.appendChild(clone);    

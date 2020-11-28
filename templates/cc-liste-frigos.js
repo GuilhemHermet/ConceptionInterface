@@ -8,16 +8,76 @@ class CcListeFrigos extends HTMLElement {
         //proprietes
         this.nom = "";
         this.adresse = "";
-        this.distance = 0; 
+        this.distance = ""; 
         this.disponible = new Boolean("false");
         this.raisonNonDisponibilite = ""; 
         this.plats = [];
+        this.frigos = [
+            {
+                "nom": "FrigoVégétarien",
+                "adresse": "333 rue des Légumes",
+                "distance": "3.3 km",
+                "disponible": "true", 
+                "statut": "ouvert"
+            },
+            
+            {
+                "nom": "FrigoTechno",
+                "adresse": "34 rue des Disques Durs",
+                "distance": "3.5 km",
+                "disponible": "false", 
+                "statut": "fermé pour entretien"
+            },
+            
+            {
+                "nom": "FrigoCarnivore",
+                "adresse": "89 rue des Moutons",
+                "distance": "4.2 km",
+                "disponible": "true", 
+                "statut": "ouvert"
+            },
+            
+            {
+                "nom": "FrigoMusical",
+                "adresse": "905 avenue Queen",
+                "distance": "6 km",
+                "disponible": "true", 
+                "statut": "ouvert"   
+            },
+            
+            {
+                "nom": "PolyFrigo",
+                "adresse": "666 boulevard des Étudiants Honnêtes",
+                "distance": "7.9 km",
+                "disponible": "true", 
+                "statut": "ouvert"
+            },
+            
+            {
+                "nom": "FrigoMondial",
+                "adresse": "45 avenue de la Culture",
+                "distance": "9.7 km",
+                "disponible": "false", 
+                "statut": "fermé pour nettoyage"
+            },
+            
+            {
+                "nom": "FrigoNature",
+                "adresse": "9 rue des Arbres",
+                "distance": "12.4 km",
+                "disponible": "false", 
+                "statut": "fermé pour entretien"
+            },
+            
+            {
+                "nom": "FrigoMathématique",
+                "adresse": "314 rue Pi",
+                "distance": "14.5 km",
+                "disponible": "true", 
+                "statut": "ouvert"
+            }
+            ]
     }
-
-    getJSON(path){
-        return fetch(path).then(response => response.json()); 
-    }
-
 
     //lorsque connecte'
     connectedCallback() { 
@@ -26,11 +86,11 @@ class CcListeFrigos extends HTMLElement {
         <style>
         .grid-container {
             display: grid;
-            grid-template-columns: 25% 75%; //25% pour l'image de frigo et 75% pour ses informations 
+            grid-template-columns: 25% 70% 5%; //25% pour l'image de frigo et 75% pour ses informations 
             padding: 10px;
           }
           .grid-item {
-            font-size: 30px;
+            font-size: 25px;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
           }
@@ -41,21 +101,24 @@ class CcListeFrigos extends HTMLElement {
                 padding: 5px;
             }
             h1, h2 {
-                color:white;
+                color:black;
             }
         </style>
         <template id="template-frigo" class="grid-container">
             <div class="grid-container frame">
+                <div class="grid-item" >
+                     <img id="photo-frigo" alt="image introuvable">
+                </div>
+                
                 <div class="grid-item"  id="cadre">
                      <h2 id="nom"></h2>
                       <p id="adresse"></p>
-                      <p id="distance"></p>
                       <p id="Raison-Non-Disponibilite"></p>
                  </div>
 
-                <div class="grid-item" >
-                     <img id="photo-frigo">
-                </div>
+                 <div class="grid-item">
+                    <p id="distance"></p>
+                 </div>
             
             </div>
 
@@ -68,23 +131,25 @@ class CcListeFrigos extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        //clone le templateContent
-        const clone = document.importNode(this.templateContent, true);
-        //met 'a jour le clone avec les donnees de chaque vehicule si demande
-        clone.querySelector('#nom').innerHTML = this.nom;
-        clone.querySelector('#adresse').innerHTML = this.adresse;
-        clone.querySelector('#distance').innerHTML = this.distance;
-        if (this.disponible === "false") {
-            clone.querySelector('#Raison-Non-Disponibilite').innerHTML = this.raisonNonDisponibilite;
-            clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoRouge.bmp');
-        }
-        else {
-            clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoVert.bmp');
-        }
-        clone.querySelector('#photo-frigo').setAttribute("width", "100%");  
-        clone.querySelector('#photo-frigo').setAttribute("height", "100%");
-        //ajoute le clone au shadow DOM
-        this.result.appendChild(clone);    
+        this.frigos.map(frigo => {
+            //clone le templateContent
+            const clone = document.importNode(this.templateContent, true);
+            //met 'a jour le clone avec les donnees de chaque vehicule si demande
+            clone.querySelector('#nom').innerHTML = frigo.nom;
+            clone.querySelector('#adresse').innerHTML = frigo.adresse;
+            clone.querySelector('#distance').innerHTML = frigo.distance;
+            if (frigo.disponible === "false") {
+                clone.querySelector('#Raison-Non-Disponibilite').innerHTML = frigo.statut;
+                clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoRouge.png');
+            }
+            else {
+                clone.querySelector('#photo-frigo').setAttribute("src", 'assets/FrigoVert.png');
+            }
+            clone.querySelector('#photo-frigo').setAttribute("width", "100%");  
+            clone.querySelector('#photo-frigo').setAttribute("height", "100%");
+            //ajoute le clone au shadow DOM
+            this.result.appendChild(clone);    
+        });
     }
 
 

@@ -4,10 +4,12 @@
     padding: 5%;
   }
   
-  
   .grid-item {
     font-size: 20px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  #panier {
+    padding-right: 2%;
+  }

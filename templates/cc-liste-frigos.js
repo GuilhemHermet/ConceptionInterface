@@ -19,9 +19,12 @@ class CcListeFrigos extends HTMLElement {
         this._root.innerHTML = `
         <style>
         .grid-container {
+            float: left;
+            width: 48%;
             display: grid;
             grid-template-columns: 25% 60% 10%; //25% pour l'image de frigo et 75% pour ses informations 
             padding: 10px;
+            padding-left: 1%;
           }
           .grid-item {
             font-size: 15px;
@@ -41,8 +44,11 @@ class CcListeFrigos extends HTMLElement {
             .sous-paragraphe {
                 font-size: 13px; 
             }
+            .global-container {
+                display: inline-block;
+            }
         </style>
-        <template id="template-frigo" class="grid-container">
+        <template id="template-frigo" class="global-container">
             <div class="grid-container frame">
                 <div class="grid-item" >
                      <img id="photo-frigo" alt="image introuvable">

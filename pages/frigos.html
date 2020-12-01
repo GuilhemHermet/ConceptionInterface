@@ -11,7 +11,6 @@
   <!--CSS-->
   <link rel="stylesheet" href="../styles/frigos.css">
   <link rel="stylesheet" href="../styles/responsive.css">
-  <link rel="stylesheet" href="../styles/connexionForm.css">
 </head>
 <body>
 
@@ -22,8 +21,8 @@
             <h1>Frigocommunautaire</h1>
         </div>
         <div class="right-title-div">
-            <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-shopping-basket"></i></button>
-            <div>Membres</div>
+            <button class="btnMember"><i class="fas fa-shopping-basket"></i></button>
+            <div id="panier">Panier</div>
         </div>
     </div>
   </div>
@@ -32,14 +31,7 @@
     <div class="header-tabs">
     </div> 
     <div class="grid-container">
-        <div class="grid-item">
-            <!-- Go mettre la liste des frigos de gauche ici-->
-            <cc-liste-frigos></cc-liste-frigos>
-        </div>
-        <div class="grid-item">
-            <!-- Go mettre la liste des frigos de droite ici-->
-            <cc-liste-frigos></cc-liste-frigos>
-        </div>
+        <cc-liste-frigos></cc-liste-frigos>
     </div>
     <div class="body">
 
@@ -49,35 +41,7 @@
 
   <dialog id="dialogbox">
     <div class="container-connexion" id="connexionForm" >
-        <form action="" method="get" class="form-connexion">
-            <h1 id="header1">Accès à l'espace membre</h1>
-            <hr>
-            <div class="form-text">
-                <label class="text-label-username" for="username"> 
-                    <span class="font-normal">
-                        Nom d'utilisateur
-                    </span> 
-                </label>
-                <div class="text-enter">
-                    <input class="form-control" type="text" name="username" id="username" required>
-                </div> 
-            <div>
-            <div class="form-text">
-                <label class="text-label-password" for="password">
-                    <span class="font-normal">
-                        Mot de passe
-                    </span> 
-                </label>
-                <div class="text-enter">
-                    <input class="form-control" type="text" name="password" id="password" required>   
-                </div>
-            </div>
-            <hr>
-            <div class="buttonForm">
-                <button type="button" class="btn-cancel" onclick="closeForm()">Annuler</button>
-                <button type="submit" class="btn-connect" onclick="closeForm()">Connecter</button>
-            </div>
-        </form>
+        <!-- Mettre le compteur d'aliments -->
     </div>
   </dialog>
 

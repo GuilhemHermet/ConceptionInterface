@@ -1,47 +1,45 @@
 {
 "plats": [
-
 {
-    "nom": "Salade",
+    "nom": "Salade verte",
     "categorie": "Salades",
     "dateDePeremption":"02/12/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Sésame"
 },
 
 {
-    "nom": "Fromage",
+    "nom": "Fromage brie",
     "categorie": "Fromage",
     "dateDePeremption":"25/11/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Gluten"
 },
 
 {
-    "nom": "Gâteau",
+    "nom": "Gâteau aux framboises",
     "categorie": "Dessert",
     "dateDePeremption":"28/11/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Traces de noix et arachides"
 },
 
 {
     "nom": "Spaghetti",
     "categorie": "Pâtes",
     "dateDePeremption":"10/12/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Gluten"
 },
 
 {
     "nom": "Sandwich au thon",
     "categorie": "Sandwich",
     "dateDePeremption":"5/12/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Aucun"
 },
 
 {
     "nom": "Sushi",
     "categorie": "Poisson",
     "dateDePeremption":"30/11/2020",
-    "allergenes":"blablabla"
+    "allergenes":"Sésame"
 }
-
 ]
 }

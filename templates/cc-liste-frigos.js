@@ -22,7 +22,7 @@ class CcListeFrigos extends HTMLElement {
             float: left;
             width: 48%;
             display: grid;
-            grid-template-columns: 25% 60% 10%; //25% pour l'image de frigo et 75% pour ses informations 
+            grid-template-columns: 25% 60% 10%; //25% pour l'image de frigo, 60%  pour les infos et 10% pour la distance 
             padding: 10px;
             padding-left: 1%;
           }
@@ -50,9 +50,11 @@ class CcListeFrigos extends HTMLElement {
         </style>
         <template id="template-frigo" class="global-container">
             <div class="grid-container frame">
-                <div class="grid-item" >
-                     <img id="photo-frigo" alt="image introuvable">
+                <div class="grid-item">
+                <form action ="../pages/plats.html">
+                     <input type="image" id="photo-frigo" alt="image introuvable">
                 </div>
+                </form>
                 
                 <div class="grid-item"  id="cadre">
                      <h2 id="nom"></h2>

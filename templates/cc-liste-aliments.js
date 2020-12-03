@@ -7,8 +7,15 @@ class CcListeAliments extends HTMLElement {
 
         //proprietes
         this.plats = []; 
+        this.quantitePanier = 0; 
     }
 
+    modifierQuantitePanier(nouvelleQuantite){
+        console.log(this.quantitePanier); 
+        quantite = nouvelleQuantite; 
+        document.getElementById("btnPanier").innerHTML = quantite;
+    }
+    
     getJSON(path){
         return fetch(path).then(response => response.json()).then(json => this.plats = json.plats); 
     }
@@ -113,7 +120,7 @@ class CcListeAliments extends HTMLElement {
                  <div class="quantite-container">
                     <div class="quantite">x <span id="quantite"></span></div>
                     <div class="add-container">
-                        <button class="add-button" title="Ajouter au panier">+</i></button>
+                        <button class="add-button" title="Ajouter au panier" onclick="modifierQuantitePanier(2)">+</i></button>
                     </div>   
                  </div>
             
@@ -186,6 +193,7 @@ class CcListeAliments extends HTMLElement {
                 ];
             //console.log(this.frigos);
             this.plats.map(plat => {
+                if (plat.quantite > 0) {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
                 //met 'a jour le clone avec les donnees de chaque vehicule si demande
@@ -198,6 +206,7 @@ class CcListeAliments extends HTMLElement {
                 clone.querySelector('#photo-aliment').setAttribute("width", "50%");  
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
+                }
             });
             // })
     }

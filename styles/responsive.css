@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 1200px) {
     /*barre de titre*/
     .left-title-div{
@@ -21,25 +22,25 @@
         font-family:'Arial', sans-serif;
     }
 
-    /*barre de navigation*/
-    .header-tabs{
-        width: 100%;
-    }
-    
-
-    #navigationbar{
-        height: 60px;
-    }
-    
-    #navigationbar li{
-        width: 120px;
-    }
-
-    .active-tab{
-        border-bottom: solid 4px white;
-    }
-    
+/*barre de navigation*/
+.header-tabs{
+    width: 100%;
 }
+
+
+#navigationbar{
+    height: 60px;
+}
+
+#navigationbar li{
+    width: 120px;
+}
+
+.active-tab{
+    border-bottom: solid 4px white;
+}
+    
+
 
 /* @media screen and (min-width: 563px) and (max-width: 1200px) {
     body{

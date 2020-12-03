@@ -1,57 +1,69 @@
 {
 "plats": [
-{
-    "nom": "Salade verte",
-    "categorie": "Salades",
-    "dateDePeremption":"02/12/2020",
-    "allergenes":"Sésame",
-    "quantite": "1",
-    "photoSrc": ""
-},
-
-{
-    "nom": "Fromage brie",
-    "categorie": "Fromage",
-    "dateDePeremption":"25/11/2020",
-    "allergenes":"Gluten",
-    "quantite": "1",
-    "photoSrc": ""
-},
-
-{
-    "nom": "Gâteau aux framboises",
-    "categorie": "Dessert",
-    "dateDePeremption":"28/11/2020",
-    "allergenes":"Traces de noix et arachides",
-    "quantite": "1",
-    "photoSrc": ""
-},
-
-{
-    "nom": "Spaghetti",
-    "categorie": "Pâtes",
-    "dateDePeremption":"10/12/2020",
-    "quantite": "1",
-    "allergenes":"Gluten",
-    "photoSrc": ""
-},
-
-{
-    "nom": "Sandwich au thon",
-    "categorie": "Sandwich",
-    "dateDePeremption":"5/12/2020",
-    "allergenes":"Aucun",
-    "quantite": "1",
-    "photoSrc": "../assets/FrigoRouge.png"
-},
-
-{
-    "nom": "Sushi",
-    "categorie": "Poisson",
-    "dateDePeremption":"30/11/2020",
-    "allergenes":"Sésame",
-    "quantite": "1",
-    "photoSrc": ""
-}
-]
+    {
+        "nom": "Salade verte",
+        "categorie": "Salades",
+        "dateDePeremption":"02/12/2020",
+        "allergenes":"Sésame",
+        "quantite": "1",
+        "photoSrc": "../assets/plats/salade.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature", "FrigoMathématique"]
+    },
+    
+    {
+        "nom": "Fromage brie",
+        "categorie": "Fromage",
+        "dateDePeremption":"25/11/2020",
+        "allergenes":"Gluten",
+        "quantite": "1",
+        "photoSrc": "../assets/plats/brie.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature", "FrigoMathématique"]
+    },
+    
+    {
+        "nom": "Gâteau aux framboises",
+        "categorie": "Dessert",
+        "dateDePeremption":"28/11/2020",
+        "allergenes":"Noix",
+        "quantite": "1",
+        "photoSrc": "../assets/plats/gateau.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature", "FrigoMathématique"]
+    },
+    
+    {
+        "nom": "Spaghetti",
+        "categorie": "Pâtes",
+        "dateDePeremption":"10/12/2020",
+        "quantite": "1",
+        "allergenes":"Gluten",
+        "photoSrc": "../assets/plats/spaghetti.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature"]
+    },
+    
+    {
+        "nom": "Sandwich au thon",
+        "categorie": "Sandwich",
+        "dateDePeremption":"5/12/2020",
+        "allergenes":"Aucun",
+        "quantite": "1",
+        "photoSrc": "../assets/plats/sandwich.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature"]
+    },
+    
+    {
+        "nom": "Sushi",
+        "categorie": "Poisson",
+        "dateDePeremption":"30/11/2020",
+        "allergenes":"Sésame",
+        "quantite": "1",
+        "photoSrc": "../assets/plats/sushi.png",
+        "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+        "FrigoNature"]
+    }
+    ]
 }

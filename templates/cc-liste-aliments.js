@@ -5,126 +5,192 @@ class CcListeAliments extends HTMLElement {
         //obtient le shadow root pour recevoir le code encapsule'
         this._root = this.attachShadow({ mode: 'open' });
 
-        //donnees
-        this.nom = '';
-        this.quantite = 0;
-        this.categorie = '';
-        this.datePeremption = '';
-        this.allergenes = '';
-        this.photoSrc = '';
-        
+        //proprietes
+        this.plats = []; 
+    }
+
+    getJSON(path){
+        return fetch(path).then(response => response.json()).then(json => this.plats = json.plats); 
     }
 
     //lorsque connecte'
-    connectedCallback() {
+    connectedCallback() { 
         //defini le code encapsule'
         this._root.innerHTML = `
         <style>
-            .frame {
-                background-color: #eeeeee;
-                margin: 5px;
+            .liste-plats{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+
+            }
+            .global-container {
+                width: 29%;
+                height: 150px;
+                display: flex;
+                margin: 5px 15px;
                 padding: 5px;
+                background-color: #eeeeee;
+                overflow-y: auto;
             }
-            h2 {
-                color:blue;
+            .image-container {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
-            .grid-container {
-                display: grid;
-                grid-template-columns: 25% 75%;
-                padding: 10px;
-              }
-              .grid-item {
-                font-size: 30px;
-                text-align: center;
+            .description-container {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
                 font-family: Arial, Helvetica, sans-serif;
-              }
-            #photo{
-                width: 40px;
+            }
+
+            .nom-plat{
+                font-weight: 600;
+                font-size: 1.25rem;
+            }
+
+            .categorie-plat{
+                font-style: italic;
+            }
+
+            .quantite-container {
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                margin-right: 15px;
+                align-items: flex-end;
+                font-family: cursive;
+                font-size: 18px;
+            }
+
+            .sous-paragraphe {
+                font-size: 13px;
+                margin: 3px; 
             }
         </style>
         <template id="template-aliment">
-            <div class="grid-container frame" id="cadre">
-                <div class="grid-item">
-                    <img id="photo"/>
+            <div class="global-container">
+                <div class="image-container">
+                     <img id="photo-aliment" alt="image introuvable">
                 </div>
-                <div class="grid-item">
-                    <h2 id="nom"></h2>
-					<p id="quantite"></p>
-                    <p id="categorie"></p>
-                    <p id="date-peremption"></p>
-                    <p id="allergenes"></p>
-                </div>
+                
+                <div class="description-container"  id="cadre">
+                     <h2 id="nom" class="nom-plat"></h2>
+                      <span id="categorie" class="sous-paragraphe categorie-plat"></span>
+                      <span class="sous-paragraphe">Date limite : <span id="date-peremption"></span></span>
+                      <span class="sous-paragraphe">Allergènes : <span id="allergenes"></span></span>
+                 </div>
 
+                 <div class="quantite-container">
+                    <div class="quantite">x <span id="quantite"></span></div>   
+                 </div>
+            
             </div>
+
+
         </template>
-        <div id="result"></div>
+        <div id="result" class="liste-plats"></div>
     `;
         //cree les variables avec le fragment du code encapsule'
         this.templateContent = this._root.querySelector('#template-aliment').content;
+        
         this.result = this._root.querySelector('#result');
 
-            //clone le templateContent
-            const clone = document.importNode(this.templateContent, true);
-            //met 'a jour le clone avec les donnees de chaque vehicule si demande
-            clone.querySelector('#nom').innerHTML = this.nom;
-            clone.querySelector('#quantite').innerHTML = this.quantite;
-            clone.querySelector('#categorie').innerHTML = this.categorie;
-            clone.querySelector('#date-peremption').innerHTML = this.datePeremption;
-            clone.querySelector('#allergenes').innerHTML = this.allergenes;
-            clone.querySelector("#photo").setAttribute("src", this.photoSrc);
-        //     }
-        //     if (this.affiche_modele === "true") {
-        //         clone.querySelector('#modele').innerHTML = vehicule.modele;
-        //     }
-        //     if (this.affiche_annee === "true") {
-        //         clone.querySelector('#annee').innerHTML = vehicule.annee;
-        //     }
-        //     // Met à jour la couleur    
-        //     clone.querySelector("#cadre").setAttribute("style", "background-color:" + this.couleur + ";");
-        //     if (this.affiche_photo === "true") {
-        //         clone.querySelector("#photo").setAttribute("src", vehicule.photo);
-        //     }
-            //ajoute le clone au shadow DOM
-            this.result.appendChild(clone);
+        // this.getJSON("../scripts/plats.json").then(() => {
+            this.plats = [
+                {
+                    "nom": "Salade verte",
+                    "categorie": "Salades",
+                    "dateDePeremption":"02/12/2020",
+                    "allergenes":"Sésame",
+                    "quantite": "1",
+                    "photoSrc": "../assets/plats/salade.png"
+                },
+                
+                {
+                    "nom": "Fromage brie",
+                    "categorie": "Fromage",
+                    "dateDePeremption":"25/11/2020",
+                    "allergenes":"Gluten",
+                    "quantite": "1",
+                    "photoSrc": ""
+                },
+                
+                {
+                    "nom": "Gâteau aux framboises",
+                    "categorie": "Dessert",
+                    "dateDePeremption":"28/11/2020",
+                    "allergenes":"Traces de noix et arachides",
+                    "quantite": "1",
+                    "photoSrc": ""
+                },
+                
+                {
+                    "nom": "Spaghetti",
+                    "categorie": "Pâtes",
+                    "dateDePeremption":"10/12/2020",
+                    "quantite": "1",
+                    "allergenes":"Gluten",
+                    "photoSrc": ""
+                },
+                
+                {
+                    "nom": "Sandwich au thon",
+                    "categorie": "Sandwich",
+                    "dateDePeremption":"5/12/2020",
+                    "allergenes":"Aucun",
+                    "quantite": "1",
+                    "photoSrc": "../assets/plats/patate.jpg"
+                },
+                
+                {
+                    "nom": "Sushi",
+                    "categorie": "Poisson",
+                    "dateDePeremption":"30/11/2020",
+                    "allergenes":"Sésame",
+                    "quantite": "1",
+                    "photoSrc": ""
+                }
+                ];
+            //console.log(this.frigos);
+            this.plats.map(plat => {
+                //clone le templateContent
+                const clone = document.importNode(this.templateContent, true);
+                //met 'a jour le clone avec les donnees de chaque vehicule si demande
+                clone.querySelector('#nom').innerHTML = plat.nom;
+                clone.querySelector('#categorie').innerHTML = plat.categorie;   
+                clone.querySelector('#date-peremption').innerHTML = plat.dateDePeremption;
+                clone.querySelector('#quantite').innerHTML = plat.quantite;
+                clone.querySelector('#allergenes').innerHTML = plat.allergenes;
+                clone.querySelector('#photo-aliment').setAttribute("src", plat.photoSrc);
+                clone.querySelector('#photo-aliment').setAttribute("width", "50%");  
+                //ajoute le clone au shadow DOM
+                this.result.appendChild(clone);    
+            });
+            // })
     }
 
-    static get observedAttributes() {
-        return ["nom", "quantite", "categorie", "date_peremption", "allergenes", "photo_src"];
-    }
-    attributeChangedCallback(name, oldValue, newValue) {
-        //this._root.getElementById(name).innerHTML=newValue;   
-        console.log('attributChanged', name, oldValue, newValue);
 
-        if (name === 'nom') {
-            this.nom = newValue;
-        }
-        if (name === 'quantite') {
-            this.quantite = newValue;
-        }
-        if (name === 'categorie') {
-            this.categorie = newValue;
-        }
-        if (name === 'date_peremption') {
-            this.datePeremption = newValue;
-        }
-        if (name === 'allergenes') {
-            this.allergenes = newValue;
-        }
-        if (name === 'photo_src') {
-            this.photoSrc = newValue;
-        }
-		console.log(this.photoSrc);
-    }/**/
+    // static get observedAttributes() {
+    //     return ["frigos"];
+    // }
+
+    // attributeChangedCallback(name, oldValue, newValue) {
+    //     //this._root.getElementById(name).innerHTML=newValue;   
+    //     console.log('attributCHanged', name, oldValue, newValue);
+
+    //     if (name === 'frigos') {
+    //         this.nom = newValue;
+    //     }
+
+    // }/**/
 
 
 
 }//fin de la classe
 
 //registre de la classe en dehors de la classe
-window.customElements.define('cc-liste-aliments', CcListeAliments); // (tag , instance)
-
-
-
-
-
-
+window.customElements.define('cc-liste-aliments', CcListeAliments); //

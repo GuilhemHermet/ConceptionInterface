@@ -34,13 +34,13 @@
     
 }
 
-@media screen and (min-width: 563px) and (max-width: 1200px) {
+/* @media screen and (min-width: 563px) and (max-width: 1200px) {
     body{
         width: 563px;
         height: 360px;
     }
 
-    /*barre de titre*/
+    // barre de titre
     .left-title-div{
         width: 0%;
     }
@@ -59,7 +59,7 @@
         font-family:'Arial', sans-serif;
     }
 
-    /*navbar et corps*/
+    // navbar et corps
     .body-container{
         display: flex;
         height: 288px;
@@ -89,7 +89,7 @@
         overflow-y: auto;
     }
 
-    /*barre de titre*/
+    // barre de titre
     .left-title-div{
         width: 0%;
     }
@@ -108,7 +108,7 @@
         font-family:'Arial', sans-serif;
     }
 
-    /*navbar et corps*/
+    // navbar et corps
     .body-container{
         height: 491px;
 
@@ -128,7 +128,7 @@
         border-bottom: solid 4px white;
     }
     
-}
+} */
 
 .title-sign-in{
     display: flex;

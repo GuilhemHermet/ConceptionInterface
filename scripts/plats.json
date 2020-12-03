@@ -4,42 +4,54 @@
     "nom": "Salade verte",
     "categorie": "Salades",
     "dateDePeremption":"02/12/2020",
-    "allergenes":"Sésame"
+    "allergenes":"Sésame",
+    "quantite": "1",
+    "photoSrc": ""
 },
 
 {
     "nom": "Fromage brie",
     "categorie": "Fromage",
     "dateDePeremption":"25/11/2020",
-    "allergenes":"Gluten"
+    "allergenes":"Gluten",
+    "quantite": "1",
+    "photoSrc": ""
 },
 
 {
     "nom": "Gâteau aux framboises",
     "categorie": "Dessert",
     "dateDePeremption":"28/11/2020",
-    "allergenes":"Traces de noix et arachides"
+    "allergenes":"Traces de noix et arachides",
+    "quantite": "1",
+    "photoSrc": ""
 },
 
 {
     "nom": "Spaghetti",
     "categorie": "Pâtes",
     "dateDePeremption":"10/12/2020",
-    "allergenes":"Gluten"
+    "quantite": "1",
+    "allergenes":"Gluten",
+    "photoSrc": ""
 },
 
 {
     "nom": "Sandwich au thon",
     "categorie": "Sandwich",
     "dateDePeremption":"5/12/2020",
-    "allergenes":"Aucun"
+    "allergenes":"Aucun",
+    "quantite": "1",
+    "photoSrc": "../assets/FrigoRouge.png"
 },
 
 {
     "nom": "Sushi",
     "categorie": "Poisson",
     "dateDePeremption":"30/11/2020",
-    "allergenes":"Sésame"
+    "allergenes":"Sésame",
+    "quantite": "1",
+    "photoSrc": ""
 }
 ]
 }

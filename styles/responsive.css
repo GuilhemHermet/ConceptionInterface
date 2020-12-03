@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+/*barre de titre*/
+.left-title-div, .right-title-div{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.center-title-div{
+    width: 60%;
+    font-family:'Arial', sans-serif;
+}
+=======
 @media screen and (min-width: 1200px) {
     /*barre de titre*/
     .left-title-div{
@@ -20,26 +36,27 @@
         width: 85%;
         font-family:'Arial', sans-serif;
     }
+>>>>>>> 7784d329977747772b2d321c526df8551e5ebcac
 
-    /*barre de navigation*/
-    .header-tabs{
-        width: 100%;
-    }
-    
-
-    #navigationbar{
-        height: 60px;
-    }
-    
-    #navigationbar li{
-        width: 120px;
-    }
-
-    .active-tab{
-        border-bottom: solid 4px white;
-    }
-    
+/*barre de navigation*/
+.header-tabs{
+    width: 100%;
 }
+
+
+#navigationbar{
+    height: 60px;
+}
+
+#navigationbar li{
+    width: 120px;
+}
+
+.active-tab{
+    border-bottom: solid 4px white;
+}
+    
+
 
 /* @media screen and (min-width: 563px) and (max-width: 1200px) {
     body{

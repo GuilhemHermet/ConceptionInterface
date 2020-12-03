@@ -51,10 +51,11 @@ class CcListeFrigos extends HTMLElement {
         <template id="template-frigo" class="global-container">
             <div class="grid-container frame">
                 <div class="grid-item">
-                <form action ="../pages/plats.html">
-                     <input type="image" id="photo-frigo" alt="image introuvable">
+                    <a id="navigation-plats">
+                        <input type="image" id="photo-frigo" alt="image introuvable">
+                    </a>
                 </div>
-                </form>
+                
                 
                 <div class="grid-item"  id="cadre">
                      <h2 id="nom"></h2>
@@ -77,7 +78,7 @@ class CcListeFrigos extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        this.getJSON("../scripts/frigos.json").then(frigo => {
+         this.getJSON("../scripts/frigos.json").then(frigo => {
 
             //console.log(this.frigos);
             this.frigos.map(frigo => {
@@ -96,10 +97,11 @@ class CcListeFrigos extends HTMLElement {
                 }
                 clone.querySelector('#photo-frigo').setAttribute("width", "50%");  
                 clone.querySelector('#photo-frigo').setAttribute("height", "100%");
+                clone.querySelector('#navigation-plats').setAttribute("href", `../pages/plats.html?frigo=${frigo.nom}`);
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
             });
-            })
+         })
     }
 
 

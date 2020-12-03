@@ -6,8 +6,19 @@ class CcListeAliments extends HTMLElement {
         this._root = this.attachShadow({ mode: 'open' });
 
         //proprietes
-        this.plats = []; 
+        this.platsTemp = [];
+        this.plats = [];
+        this.frigo = '';
         this.quantitePanier = 0; 
+
+        // Récupération du frigo courant
+        var str = window.location.href;
+        var url = new URL(str);
+        var search_params = new URLSearchParams(url.search); 
+        if(search_params.has('frigo')) {
+          this.frigo = search_params.get('frigo');
+          console.log(this.frigo);
+        }	 
     }
 
     modifierQuantitePanier(nouvelleQuantite){
@@ -17,7 +28,7 @@ class CcListeAliments extends HTMLElement {
     }
     
     getJSON(path){
-        return fetch(path).then(response => response.json()).then(json => this.plats = json.plats); 
+        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
     }
 
     //lorsque connecte'
@@ -210,22 +221,6 @@ class CcListeAliments extends HTMLElement {
             });
              })
     }
-
-
-    // static get observedAttributes() {
-    //     return ["frigos"];
-    // }
-
-    // attributeChangedCallback(name, oldValue, newValue) {
-    //     //this._root.getElementById(name).innerHTML=newValue;   
-    //     console.log('attributCHanged', name, oldValue, newValue);
-
-    //     if (name === 'frigos') {
-    //         this.nom = newValue;
-    //     }
-
-    // }/**/
-
 
 
 }//fin de la classe

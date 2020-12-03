@@ -6,7 +6,9 @@
     "dateDePeremption":"02/12/2020",
     "allergenes":"Sésame",
     "quantite": "1",
-    "photoSrc": "../assets/plats/salade.png"
+    "photoSrc": "../assets/plats/salade.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature", "FrigoMathématique"]
 },
 
 {
@@ -15,16 +17,20 @@
     "dateDePeremption":"25/11/2020",
     "allergenes":"Gluten",
     "quantite": "1",
-    "photoSrc": "../assets/plats/brie.png"
+    "photoSrc": "../assets/plats/brie.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature", "FrigoMathématique"]
 },
 
 {
     "nom": "Gâteau aux framboises",
     "categorie": "Dessert",
     "dateDePeremption":"28/11/2020",
-    "allergenes":"Traces de noix et arachides",
+    "allergenes":"Noix",
     "quantite": "1",
-    "photoSrc": "../assets/plats/gateau.png"
+    "photoSrc": "../assets/plats/gateau.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature", "FrigoMathématique"]
 },
 
 {
@@ -33,7 +39,9 @@
     "dateDePeremption":"10/12/2020",
     "quantite": "1",
     "allergenes":"Gluten",
-    "photoSrc": "../assets/plats/spaghetti.png"
+    "photoSrc": "../assets/plats/spaghetti.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature"]
 },
 
 {
@@ -42,7 +50,9 @@
     "dateDePeremption":"5/12/2020",
     "allergenes":"Aucun",
     "quantite": "1",
-    "photoSrc": "../assets/plats/sandwich.png"
+    "photoSrc": "../assets/plats/sandwich.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature"]
 },
 
 {
@@ -51,7 +61,9 @@
     "dateDePeremption":"30/11/2020",
     "allergenes":"Sésame",
     "quantite": "1",
-    "photoSrc": "../assets/plats/sushi.png"
+    "photoSrc": "../assets/plats/sushi.png",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "FrigoNature"]
 }
 ]
 }

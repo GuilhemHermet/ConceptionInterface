@@ -78,7 +78,7 @@ class CcListeFrigos extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-         this.getJSON("../scripts/frigos.json").then(frigo => {
+        this.getJSON("../scripts/frigos.json").then(frigo => {
 
             //console.log(this.frigos);
             this.frigos.map(frigo => {
@@ -101,7 +101,7 @@ class CcListeFrigos extends HTMLElement {
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
             });
-         })
+        })
     }
 
 
@@ -124,4 +124,4 @@ class CcListeFrigos extends HTMLElement {
 }//fin de la classe
 
 //registre de la classe en dehors de la classe
-window.customElements.define('cc-liste-frigos', CcListeFrigos); //
+window.customElements.define('cc-liste-frigos', CcListeFrigos); 

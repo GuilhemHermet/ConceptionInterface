@@ -148,62 +148,8 @@ class CcListeAliments extends HTMLElement {
 
         this.getJSON("../scripts/plats.json").then(() => {
 
-            this.plats = platsTemp.filter(plat => plat.frigos.includes(this.frigo));
-            /*this.plats = [
-                {
-                    "nom": "Salade verte",
-                    "categorie": "Salades",
-                    "dateDePeremption":"02/12/2020",
-                    "allergenes":"Sésame",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/salade.png"
-                },
-                
-                {
-                    "nom": "Fromage brie",
-                    "categorie": "Fromage",
-                    "dateDePeremption":"25/11/2020",
-                    "allergenes":"Gluten",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/brie.png"
-                },
-                
-                {
-                    "nom": "Gâteau aux framboises",
-                    "categorie": "Dessert",
-                    "dateDePeremption":"28/11/2020",
-                    "allergenes":"Noix",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/gateau.png"
-                },
-                
-                {
-                    "nom": "Spaghetti",
-                    "categorie": "Pâtes",
-                    "dateDePeremption":"10/12/2020",
-                    "quantite": "1",
-                    "allergenes":"Gluten",
-                    "photoSrc": "../assets/plats/spaghetti.png"
-                },
-                
-                {
-                    "nom": "Sandwich au thon",
-                    "categorie": "Sandwich",
-                    "dateDePeremption":"5/12/2020",
-                    "allergenes":"Aucun",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/sandwich.png"
-                },
-                
-                {
-                    "nom": "Sushi",
-                    "categorie": "Poisson",
-                    "dateDePeremption":"30/11/2020",
-                    "allergenes":"Sésame",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/sushi.png"
-                }
-                ];*/
+            this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo));
+
             //console.log(this.frigos);
             this.plats.map(plat => {
                 if (plat.quantite > 0) {
@@ -221,7 +167,7 @@ class CcListeAliments extends HTMLElement {
                 this.result.appendChild(clone);    
                 }
             });
-             })
+        })
     }
 
 

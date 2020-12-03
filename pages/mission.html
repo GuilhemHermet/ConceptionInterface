@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/fabb441907.js" crossorigin="anonymous"></script>
   <!--JavaScript-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../scripts/script-inscription.js"></script>
+  <script src="../scripts/script-connexion.js"></script>
   <script src="../scripts/script.js"></script>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -89,7 +89,7 @@
                     Nom d'utilisateur
                 </label>
                 <div class="text-enter">
-                    <input class="form-control form-control-lg" type="text" name="username" id="username" >
+                    <input class="form-control form-control-lg" type="text" name="username" id="username">
                 </div>  
             </div>
             <div class="form-ligne form-group">
@@ -97,13 +97,13 @@
                     Mot de passe
                 </label>
                 <div class="text-enter">
-                    <input class="form-control form-control-lg" type="password" name="password" id="password" >
+                    <input class="form-control form-control-lg" type="password" name="password" id="password" required>
                 </div>  
             </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn inversely-colored" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn lightly-colored btn-lg">Connecter</button>
+          <button type="button" class="btn lightly-colored btn-lg" id="connexion">Connecter</button>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*barre de titre*/
 .left-title-div, .right-title-div{
     width: 20%;
@@ -12,6 +13,30 @@
     width: 60%;
     font-family:'Arial', sans-serif;
 }
+=======
+@media screen and (min-width: 1200px) {
+    /*barre de titre*/
+    .left-title-div{
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .right-title-div{
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding-right: 30px;
+    }
+
+    .center-title-div{
+        width: 85%;
+        font-family:'Arial', sans-serif;
+    }
+>>>>>>> 7784d329977747772b2d321c526df8551e5ebcac
 
 /*barre de navigation*/
 .header-tabs{
@@ -144,6 +169,10 @@
     font-size: 2.5rem;
 }
 
+.left-title-div i{
+    font-size: 2.5rem;
+    color:#FFFFFF;
+}
 
 
 .center-title-div h1{

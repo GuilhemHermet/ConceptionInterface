@@ -146,7 +146,9 @@ class CcListeAliments extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        this.getJSON("../scripts/plats.json").then(() => {
+        this.getJSON("../scripts/plats.json").then(() => {
+
+            this.plats = platsTemp.filter(plat => plat.frigos.includes(this.frigo));
             /*this.plats = [
                 {
                     "nom": "Salade verte",

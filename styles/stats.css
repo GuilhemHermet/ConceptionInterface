@@ -5,3 +5,12 @@ color: #008C8C;
 br{
     color:red;
 }
+
+#titre {
+    padding-top: 2%;
+}
+
+.header-title:hover {
+    text-decoration: none;
+    color:white;
+}

@@ -13,3 +13,12 @@ h2{
 p {
     margin: 0;
 }
+
+.header-title:hover {
+    text-decoration: none;
+    color:white;
+}
+
+#titre {
+    padding-top: 2%;
+}

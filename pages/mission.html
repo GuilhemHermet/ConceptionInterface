@@ -19,7 +19,6 @@
   <!--CSS override-->
   <link rel="stylesheet" href="../styles/mission.css">
   <link rel="stylesheet" href="../styles/responsive.css">
-  <link rel="stylesheet" href="../styles/connexionForm.css">
 
 </head>
 <body>
@@ -31,7 +30,7 @@
             <h1 id="titre">Frigocommunautaire</h1>
         </div>
         <div class="right-title-div">
-            <button class="btnMember" onclick="showConnexionForm()"><i class="fas fa-sign-in-alt"></i></button>
+            <button class="btnMember" data-toggle="modal" data-target="#modalConnexion"><i class="fas fa-sign-in-alt"></i></button>
             <div>Membres</div>
         </div>
     </div>
@@ -75,40 +74,40 @@
     </div>
   </div>
 
-
-  <dialog id="dialogbox">
-    <div class="container-connexion" id="connexionForm" >
-        <form action="" method="get" class="form-connexion">
-            <h1 id="header1">Accès à l'espace membre</h1>
-            <hr>
-            <div class="form-text">
-                <label class="text-label-username" for="username"> 
-                    <span class="font-normal">
-                        Nom d'utilisateur
-                    </span> 
+  <div class="modal fade" id="modalConnexion" tabindex="-1" role="dialog" aria-labelledby="modalConnexionTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Accès à l'espace membre</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-ligne form-group">
+                <label class="text-label pl-2" for="username"> 
+                    Nom d'utilisateur
                 </label>
                 <div class="text-enter">
-                    <input class="form-control" type="text" name="username" id="username" required>
-                </div> 
-            <div>
-            <div class="form-text">
-                <label class="text-label-password" for="password">
-                    <span class="font-normal">
-                        Mot de passe
-                    </span> 
+                    <input class="form-control form-control-lg" type="text" name="username" id="username" >
+                </div>  
+            </div>
+            <div class="form-ligne form-group">
+                <label class="text-label pl-2" for="password"> 
+                    Mot de passe
                 </label>
                 <div class="text-enter">
-                    <input class="form-control" type="text" name="password" id="password" required>   
-                </div>
+                    <input class="form-control form-control-lg" type="password" name="password" id="password" >
+                </div>  
             </div>
-            <hr>
-            <div class="buttonForm">
-                <button type="button" class="btn-cancel" onclick="closeForm()">Annuler</button>
-                <button type="submit" class="btn-connect" onclick="closeForm()">Connecter</button>
-            </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-success">Se connecter</button>
+        </div>
+      </div>
     </div>
-  </dialog>
+  </div>
 
 </body>
 </html>

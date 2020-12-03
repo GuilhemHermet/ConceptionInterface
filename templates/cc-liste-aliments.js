@@ -186,6 +186,7 @@ class CcListeAliments extends HTMLElement {
                 ];
             //console.log(this.frigos);
             this.plats.map(plat => {
+                if (plat.quantite > 0) {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
                 //met 'a jour le clone avec les donnees de chaque vehicule si demande
@@ -198,6 +199,7 @@ class CcListeAliments extends HTMLElement {
                 clone.querySelector('#photo-aliment').setAttribute("width", "50%");  
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
+                }
             });
             // })
     }

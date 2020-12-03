@@ -25,6 +25,7 @@ class CcListeAliments extends HTMLElement {
 
             }
             .global-container {
+                border-radius: 10px;
                 width: 29%;
                 height: 150px;
                 display: flex;
@@ -66,6 +67,31 @@ class CcListeAliments extends HTMLElement {
                 font-size: 18px;
             }
 
+            .add-container{
+                display: flex;
+                height: 100%;
+                align-items: flex-end;
+                padding-bottom: 10px;
+            }
+
+            img{
+                width: 95%;
+            }
+
+            .add-button{
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background-color: #4bc2ba;
+                border: none;
+                font-weight: bold;
+                font-size: 30px;
+                color: white;
+                padding-bottom: 3px;
+            }
+
+
             .sous-paragraphe {
                 font-size: 13px;
                 margin: 3px; 
@@ -74,7 +100,7 @@ class CcListeAliments extends HTMLElement {
         <template id="template-aliment">
             <div class="global-container">
                 <div class="image-container">
-                     <img id="photo-aliment" alt="image introuvable">
+                     <img id="photo-aliment" class alt="image introuvable">
                 </div>
                 
                 <div class="description-container"  id="cadre">
@@ -85,7 +111,10 @@ class CcListeAliments extends HTMLElement {
                  </div>
 
                  <div class="quantite-container">
-                    <div class="quantite">x <span id="quantite"></span></div>   
+                    <div class="quantite">x <span id="quantite"></span></div>
+                    <div class="add-container">
+                        <button class="add-button" title="Ajouter au panier">+</i></button>
+                    </div>   
                  </div>
             
             </div>
@@ -143,7 +172,7 @@ class CcListeAliments extends HTMLElement {
                     "dateDePeremption":"5/12/2020",
                     "allergenes":"Aucun",
                     "quantite": "1",
-                    "photoSrc": "../assets/plats/patate.jpg"
+                    "photoSrc": "../assets/plats/sandwich.png"
                 },
                 
                 {

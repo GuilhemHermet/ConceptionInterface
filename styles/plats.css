@@ -1,15 +1,3 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 5%;
-  }
-  
-  .grid-item {
-    font-size: 20px;
-    text-align: center;
-    font-family: Arial, Heslvetica, sans-serif;
-  }
-  
-  #panier {
+#panier {
     padding-right: 2%;
   }

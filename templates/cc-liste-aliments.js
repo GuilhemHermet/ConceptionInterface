@@ -6,11 +6,22 @@ class CcListeAliments extends HTMLElement {
         this._root = this.attachShadow({ mode: 'open' });
 
         //proprietes
-        this.plats = []; 
+        this.platsTemp = [];
+        this.plats = [];
+        this.frigo = '';
+
+        // Récupération du frigo courant
+        var str = window.location.href;
+        var url = new URL(str);
+        var search_params = new URLSearchParams(url.search); 
+        if(search_params.has('frigo')) {
+          this.frigo = search_params.get('frigo');
+          console.log(this.frigo);
+        }	 
     }
 
     getJSON(path){
-        return fetch(path).then(response => response.json()).then(json => this.plats = json.plats); 
+        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
     }
 
     //lorsque connecte'
@@ -128,63 +139,9 @@ class CcListeAliments extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        // this.getJSON("../scripts/plats.json").then(() => {
-            this.plats = [
-                {
-                    "nom": "Salade verte",
-                    "categorie": "Salades",
-                    "dateDePeremption":"02/12/2020",
-                    "allergenes":"Sésame",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/salade.png"
-                },
-                
-                {
-                    "nom": "Fromage brie",
-                    "categorie": "Fromage",
-                    "dateDePeremption":"25/11/2020",
-                    "allergenes":"Gluten",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/brie.png"
-                },
-                
-                {
-                    "nom": "Gâteau aux framboises",
-                    "categorie": "Dessert",
-                    "dateDePeremption":"28/11/2020",
-                    "allergenes":"Noix",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/gateau.png"
-                },
-                
-                {
-                    "nom": "Spaghetti",
-                    "categorie": "Pâtes",
-                    "dateDePeremption":"10/12/2020",
-                    "quantite": "1",
-                    "allergenes":"Gluten",
-                    "photoSrc": "../assets/plats/spaghetti.png"
-                },
-                
-                {
-                    "nom": "Sandwich au thon",
-                    "categorie": "Sandwich",
-                    "dateDePeremption":"5/12/2020",
-                    "allergenes":"Aucun",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/sandwich.png"
-                },
-                
-                {
-                    "nom": "Sushi",
-                    "categorie": "Poisson",
-                    "dateDePeremption":"30/11/2020",
-                    "allergenes":"Sésame",
-                    "quantite": "1",
-                    "photoSrc": "../assets/plats/sushi.png"
-                }
-                ];
-            //console.log(this.frigos);
+        this.getJSON("../scripts/plats.json").then(() => {
+
+            this.plats = platsTemp.filter(plat => plat.frigos.includes(this.frigo));
             this.plats.map(plat => {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
@@ -199,24 +156,8 @@ class CcListeAliments extends HTMLElement {
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
             });
-            // })
+        })
     }
-
-
-    // static get observedAttributes() {
-    //     return ["frigos"];
-    // }
-
-    // attributeChangedCallback(name, oldValue, newValue) {
-    //     //this._root.getElementById(name).innerHTML=newValue;   
-    //     console.log('attributCHanged', name, oldValue, newValue);
-
-    //     if (name === 'frigos') {
-    //         this.nom = newValue;
-    //     }
-
-    // }/**/
-
 
 
 }//fin de la classe

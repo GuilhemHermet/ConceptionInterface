@@ -7,8 +7,15 @@ class CcListeAliments extends HTMLElement {
 
         //proprietes
         this.plats = []; 
+        this.quantitePanier = 0; 
     }
 
+    modifierQuantitePanier(nouvelleQuantite){
+        console.log(this.quantitePanier); 
+        quantite = nouvelleQuantite; 
+        document.getElementById("btnPanier").innerHTML = quantite;
+    }
+    
     getJSON(path){
         return fetch(path).then(response => response.json()).then(json => this.plats = json.plats); 
     }
@@ -113,7 +120,7 @@ class CcListeAliments extends HTMLElement {
                  <div class="quantite-container">
                     <div class="quantite">x <span id="quantite"></span></div>
                     <div class="add-container">
-                        <button class="add-button" title="Ajouter au panier">+</i></button>
+                        <button class="add-button" title="Ajouter au panier" onclick="modifierQuantitePanier(2)">+</i></button>
                     </div>   
                  </div>
             

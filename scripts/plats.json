@@ -6,7 +6,7 @@
     "dateDePeremption":"02/12/2020",
     "allergenes":"Sésame",
     "quantite": "1",
-    "photoSrc": ""
+    "photoSrc": "../assets/plats/salade.png"
 },
 
 {
@@ -15,7 +15,7 @@
     "dateDePeremption":"25/11/2020",
     "allergenes":"Gluten",
     "quantite": "1",
-    "photoSrc": ""
+    "photoSrc": "../assets/plats/brie.png"
 },
 
 {
@@ -24,7 +24,7 @@
     "dateDePeremption":"28/11/2020",
     "allergenes":"Traces de noix et arachides",
     "quantite": "1",
-    "photoSrc": ""
+    "photoSrc": "../assets/plats/gateau.png"
 },
 
 {
@@ -33,7 +33,7 @@
     "dateDePeremption":"10/12/2020",
     "quantite": "1",
     "allergenes":"Gluten",
-    "photoSrc": ""
+    "photoSrc": "../assets/plats/spaghetti.png"
 },
 
 {
@@ -42,7 +42,7 @@
     "dateDePeremption":"5/12/2020",
     "allergenes":"Aucun",
     "quantite": "1",
-    "photoSrc": "../assets/FrigoRouge.png"
+    "photoSrc": "../assets/plats/sandwich.png"
 },
 
 {
@@ -51,7 +51,7 @@
     "dateDePeremption":"30/11/2020",
     "allergenes":"Sésame",
     "quantite": "1",
-    "photoSrc": ""
+    "photoSrc": "../assets/plats/sushi.png"
 }
 ]
 }

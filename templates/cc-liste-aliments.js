@@ -120,7 +120,7 @@ class CcListeAliments extends HTMLElement {
                  <div class="quantite-container">
                     <div class="quantite">x <span id="quantite"></span></div>
                     <div class="add-container">
-                        <button class="add-button" title="Ajouter au panier" onclick="modifierQuantitePanier(2)">+</i></button>
+                        <button class="add-button" id="btnAjout" title="Ajouter au panier">+</i></button>
                     </div>   
                  </div>
             
@@ -135,8 +135,8 @@ class CcListeAliments extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        // this.getJSON("../scripts/plats.json").then(() => {
-            this.plats = [
+        this.getJSON("../scripts/plats.json").then(() => {
+            /*this.plats = [
                 {
                     "nom": "Salade verte",
                     "categorie": "Salades",
@@ -190,7 +190,7 @@ class CcListeAliments extends HTMLElement {
                     "quantite": "1",
                     "photoSrc": "../assets/plats/sushi.png"
                 }
-                ];
+                ];*/
             //console.log(this.frigos);
             this.plats.map(plat => {
                 if (plat.quantite > 0) {
@@ -208,7 +208,7 @@ class CcListeAliments extends HTMLElement {
                 this.result.appendChild(clone);    
                 }
             });
-            // })
+             })
     }
 
 

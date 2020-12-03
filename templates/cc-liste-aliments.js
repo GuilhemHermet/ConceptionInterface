@@ -145,7 +145,7 @@ class CcListeAliments extends HTMLElement {
                     "dateDePeremption":"25/11/2020",
                     "allergenes":"Gluten",
                     "quantite": "1",
-                    "photoSrc": ""
+                    "photoSrc": "../assets/plats/brie.png"
                 },
                 
                 {
@@ -154,7 +154,7 @@ class CcListeAliments extends HTMLElement {
                     "dateDePeremption":"28/11/2020",
                     "allergenes":"Traces de noix et arachides",
                     "quantite": "1",
-                    "photoSrc": ""
+                    "photoSrc": "../assets/plats/gateau.png"
                 },
                 
                 {
@@ -163,7 +163,7 @@ class CcListeAliments extends HTMLElement {
                     "dateDePeremption":"10/12/2020",
                     "quantite": "1",
                     "allergenes":"Gluten",
-                    "photoSrc": ""
+                    "photoSrc": "../assets/plats/spaghetti.png"
                 },
                 
                 {
@@ -181,7 +181,7 @@ class CcListeAliments extends HTMLElement {
                     "dateDePeremption":"30/11/2020",
                     "allergenes":"Sésame",
                     "quantite": "1",
-                    "photoSrc": ""
+                    "photoSrc": "../assets/plats/sushi.png"
                 }
                 ];
             //console.log(this.frigos);

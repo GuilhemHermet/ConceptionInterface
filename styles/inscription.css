@@ -30,3 +30,17 @@
     background-color : #008C8C;   
 }
 
+.lightly-colored {
+    background-color : #008C8C;
+    color: white;
+}
+
+.inversely-colored {
+    font-size: 22px;
+    color : #008C8C;
+}
+
+#modalConnexionTitle {
+    color: #8C8C8C;
+    font-weight: bold;
+}

@@ -152,7 +152,7 @@ class CcListeAliments extends HTMLElement {
                     "nom": "Gâteau aux framboises",
                     "categorie": "Dessert",
                     "dateDePeremption":"28/11/2020",
-                    "allergenes":"Noix, arachides",
+                    "allergenes":"Noix",
                     "quantite": "1",
                     "photoSrc": "../assets/plats/gateau.png"
                 },

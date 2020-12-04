@@ -78,7 +78,7 @@ class CcListeFrigos extends HTMLElement {
         
         this.result = this._root.querySelector('#result');
 
-        this.getJSON("../scripts/frigos.json").then(frigo => {
+         this.getJSON("../scripts/frigos.json").then(frigo => {
 
             //console.log(this.frigos);
             this.frigos.map(frigo => {
@@ -94,14 +94,15 @@ class CcListeFrigos extends HTMLElement {
                 }
                 else {
                     clone.querySelector('#photo-frigo').setAttribute("src", '../assets/FrigoVert.png');
+                    clone.querySelector('#navigation-plats').setAttribute("href", `../pages/plats.html?frigo=${frigo.nom}`);
+
                 }
                 clone.querySelector('#photo-frigo').setAttribute("width", "50%");  
                 clone.querySelector('#photo-frigo').setAttribute("height", "100%");
-                clone.querySelector('#navigation-plats').setAttribute("href", `../pages/plats.html?frigo=${frigo.nom}`);
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
             });
-        })
+         })
     }
 
 
@@ -124,4 +125,4 @@ class CcListeFrigos extends HTMLElement {
 }//fin de la classe
 
 //registre de la classe en dehors de la classe
-window.customElements.define('cc-liste-frigos', CcListeFrigos); 
+window.customElements.define('cc-liste-frigos', CcListeFrigos); //

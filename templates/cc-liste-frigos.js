@@ -48,11 +48,11 @@ class CcListeFrigos extends HTMLElement {
                 display: inline-block;
             }
         </style>
-        <template id="template-frigo" class="global-container">
+        <template id="templateFrigo" class="global-container">
             <div class="grid-container frame">
                 <div class="grid-item">
-                    <a id="navigation-plats">
-                        <input type="image" id="photo-frigo" alt="image introuvable">
+                    <a id="navigationPlats">
+                        <input type="image" id="photoFrigo" alt="image introuvable">
                     </a>
                 </div>
                 
@@ -60,7 +60,7 @@ class CcListeFrigos extends HTMLElement {
                 <div class="grid-item"  id="cadre">
                      <h2 id="nom"></h2>
                       <p id="adresse"></p>
-                      <p class="sous-paragraphe" id="Raison-Non-Disponibilite"></p>
+                      <p class="sous-paragraphe" id="raisonNonDisponibilite"></p>
                  </div>
 
                  <div class="grid-item">
@@ -74,7 +74,7 @@ class CcListeFrigos extends HTMLElement {
         <div id="result"></div>
     `;
         //cree les variables avec le fragment du code encapsule'
-        this.templateContent = this._root.querySelector('#template-frigo').content;
+        this.templateContent = this._root.querySelector('#templateFrigo').content;
         
         this.result = this._root.querySelector('#result');
 
@@ -89,16 +89,16 @@ class CcListeFrigos extends HTMLElement {
                 clone.querySelector('#adresse').innerHTML = frigo.adresse;
                 clone.querySelector('#distance').innerHTML = frigo.distance;
                 if (frigo.disponible === "false") {
-                    clone.querySelector('#Raison-Non-Disponibilite').innerHTML = frigo.statut;
-                    clone.querySelector('#photo-frigo').setAttribute("src", '../assets/FrigoRouge.png');
+                    clone.querySelector('#raisonNonDisponibilite').innerHTML = frigo.statut;
+                    clone.querySelector('#photoFrigo').setAttribute("src", '../assets/FrigoRouge.png');
                 }
                 else {
-                    clone.querySelector('#photo-frigo').setAttribute("src", '../assets/FrigoVert.png');
-                    clone.querySelector('#navigation-plats').setAttribute("href", `../pages/plats.html?frigo=${frigo.nom}`);
+                    clone.querySelector('#photoFrigo').setAttribute("src", '../assets/FrigoVert.png');
+                    clone.querySelector('#navigationPlats').setAttribute("href", `../pages/plats.html?frigo=${frigo.nom}`);
 
                 }
-                clone.querySelector('#photo-frigo').setAttribute("width", "50%");  
-                clone.querySelector('#photo-frigo').setAttribute("height", "100%");
+                clone.querySelector('#photoFrigo').setAttribute("width", "50%");  
+                clone.querySelector('#photoFrigo').setAttribute("height", "100%");
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
             });

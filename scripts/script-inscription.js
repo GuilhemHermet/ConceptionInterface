@@ -1,25 +1,25 @@
 $(function(){
 
     $("#form-inscription").submit(() => {
-        if (($("#verif-champ1").val() === "") || ($("#verif-champ2").val() === "") || (!$(".verif-champ3").prop("checked"))){
-            $("#verif-champ1").css("border","3px solid red");
+        if (($("#verifChamp1").val() === "") || ($("#verifChamp2").val() === "") || (!$(".verifChamp3").prop("checked"))){
+            $("#verifChamp1").css("border","3px solid red");
 
-            $("#verif-champ2").css("border","3px solid red");
+            $("#verifChamp2").css("border","3px solid red");
 
-            $("#verif-champ3-nom").css("border-bottom","3px solid red");
+            $("#verifChamp3Nom").css("border-bottom","3px solid red");
 
         } else {
             let name = $("#name").val();
             let email = $("#email").val();
-            let password = $("#verif-champ1").val();
-            let passwordconfirm = $("#verif-champ2").val();
+            let password = $("#verifChamp1").val();
+            let passwordconfirm = $("#verifChamp2").val();
             if(password !== passwordconfirm){
 
-                $("#verif-champ1").css("border","3px solid red");
+                $("#verifChamp1").css("border","3px solid red");
 
-                $("#verif-champ2").css("border","3px solid red");
+                $("#verifChamp2").css("border","3px solid red");
 
-                $("#form-confirm").append($("<div />").text("Les deux mots de passes doivent être les mêmes").css("color","red"));
+                $("#formConfirm").append($("<div />").text("Les deux mots de passes doivent être les mêmes").css("color","red"));
 
                 return false;
             }
@@ -45,7 +45,7 @@ $(function(){
         return false; // permet de ne pas perform l'envoi du form.
     })
 
-    $("#retour-mission").click(()=> {
+    $("#retourMission").click(()=> {
         $('#myModal').modal('hide');
         window.location.href = "../pages/mission.html";
     })

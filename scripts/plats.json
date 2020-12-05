@@ -7,7 +7,7 @@
     "allergenes":"Sésame",
     "quantite": "1",
     "photoSrc": "../assets/plats/salade.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoMusical", "PolyFrigo",
     "FrigoNature", "FrigoMathématique"]
 },
 
@@ -18,7 +18,7 @@
     "allergenes":"Gluten",
     "quantite": "1",
     "photoSrc": "../assets/plats/brie.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoVégétarien", "PolyFrigo", "FrigoMondial",
     "FrigoNature", "FrigoMathématique"]
 },
 
@@ -29,7 +29,7 @@
     "allergenes":"Noix",
     "quantite": "1",
     "photoSrc": "../assets/plats/gateau.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoMusical", "PolyFrigo", "FrigoMondial",
     "FrigoNature", "FrigoMathématique"]
 },
 
@@ -40,7 +40,7 @@
     "quantite": "1",
     "allergenes":"Gluten",
     "photoSrc": "../assets/plats/spaghetti.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
     "FrigoNature"]
 },
 
@@ -51,7 +51,7 @@
     "allergenes":"Aucun",
     "quantite": "1",
     "photoSrc": "../assets/plats/sandwich.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
     "FrigoNature"]
 },
 
@@ -62,7 +62,7 @@
     "allergenes":"Sésame",
     "quantite": "1",
     "photoSrc": "../assets/plats/sushi.png",
-    "frigos": ["FrigoVégétarien", "FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
+    "frigos": ["FrigoTechno", "FrigoCarnivore", "FrigoMusical", "PolyFrigo", "FrigoMondial",
     "FrigoNature"]
 }
 ]

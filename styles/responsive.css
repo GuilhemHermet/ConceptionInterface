@@ -28,11 +28,11 @@
 }
 
 
-#navigationbar{
+#navigationBar{
     height: 60px;
 }
 
-#navigationbar li{
+#navigationBar li{
     width: 120px;
 }
 
@@ -41,108 +41,11 @@
 }
     
 
-
-/* @media screen and (min-width: 563px) and (max-width: 1200px) {
-    body{
-        width: 563px;
-        height: 360px;
-    }
-
-    // barre de titre
-    .left-title-div{
-        width: 0%;
-    }
-    .right-title-div{
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        padding-right: 15px;
-    }
-
-    .center-title-div{
-        width: 80%;
-        display: flex;
-        font-family:'Arial', sans-serif;
-    }
-
-    // navbar et corps
-    .body-container{
-        display: flex;
-        height: 288px;
-    }
-
-    #navigationbar{
-        flex-direction: column;
-        width: 100px;
-        height: 100%;
-    }
-
-    #navigationbar li{
-        flex: 1;
-    }
-
-
-    .active-tab{
-        border-left: solid 4px white;
-    }
-    
-}
-
-@media screen and (max-width: 563px) {
-    body{
-        width: 360px;
-        height: 563px;
-        overflow-y: auto;
-    }
-
-    // barre de titre
-    .left-title-div{
-        width: 0%;
-    }
-    .right-title-div{
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        padding-right: 15px;
-    }
-
-    .center-title-div{
-        width: 80%;
-        display: flex;
-        font-family:'Arial', sans-serif;
-    }
-
-    // navbar et corps
-    .body-container{
-        height: 491px;
-
-    }
-
-    #navigationbar{
-        width: 100%;
-        height: 60px;
-    }
-
-    #navigationbar li{
-        flex: 1;
-    }
-
-
-    .active-tab{
-        border-bottom: solid 4px white;
-    }
-    
-} */
-
 .title-sign-in{
     display: flex;
 }
 
-.btnMember{
+.btn-member{
     cursor: pointer;
     border: none;
     background-color: rgb(0, 140, 140);
@@ -188,7 +91,7 @@
     font-family:'Arial', sans-serif;
 }
 
-#navigationbar{
+#navigationBar{
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -200,7 +103,7 @@
     text-align: center;
 }
 
-#navigationbar li{
+#navigationBar li{
     font-size: 16px;
     display: flex;
     justify-content: center;

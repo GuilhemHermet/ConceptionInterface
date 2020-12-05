@@ -20,15 +20,15 @@ class CcListeAliments extends HTMLElement {
           console.log(this.frigo);
         }	 
     }
+    
+    getJSON(path){
+        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
+    }
 
     modifierQuantitePanier(nouvelleQuantite){
         console.log(this.quantitePanier); 
         quantite = nouvelleQuantite; 
         document.getElementById("btnPanier").innerHTML = quantite;
-    }
-    
-    getJSON(path){
-        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
     }
 
     //lorsque connecte'
@@ -115,16 +115,16 @@ class CcListeAliments extends HTMLElement {
                 margin: 3px; 
             }
         </style>
-        <template id="template-aliment">
+        <template id="templateAliment">
             <div class="global-container">
                 <div class="image-container">
-                     <img id="photo-aliment" class alt="image introuvable">
+                     <img id="photoAliment" class alt="image introuvable">
                 </div>
                 
                 <div class="description-container"  id="cadre">
                      <h2 id="nom" class="nom-plat"></h2>
                       <span id="categorie" class="sous-paragraphe categorie-plat"></span>
-                      <span class="sous-paragraphe">Date limite : <span id="date-peremption"></span></span>
+                      <span class="sous-paragraphe">Date limite : <span id="datePeremption"></span></span>
                       <span class="sous-paragraphe">Allergènes : <span id="allergenes"></span></span>
                  </div>
 
@@ -142,7 +142,7 @@ class CcListeAliments extends HTMLElement {
         <div id="result" class="liste-plats"></div>
     `;
         //cree les variables avec le fragment du code encapsule'
-        this.templateContent = this._root.querySelector('#template-aliment').content;
+        this.templateContent = this._root.querySelector('#templateAliment').content; 
         
         this.result = this._root.querySelector('#result');
 
@@ -158,11 +158,11 @@ class CcListeAliments extends HTMLElement {
                 //met 'a jour le clone avec les donnees de chaque vehicule si demande
                 clone.querySelector('#nom').innerHTML = plat.nom;
                 clone.querySelector('#categorie').innerHTML = plat.categorie;   
-                clone.querySelector('#date-peremption').innerHTML = plat.dateDePeremption;
+                clone.querySelector('#datePeremption').innerHTML = plat.dateDePeremption;
                 clone.querySelector('#quantite').innerHTML = plat.quantite;
                 clone.querySelector('#allergenes').innerHTML = plat.allergenes;
-                clone.querySelector('#photo-aliment').setAttribute("src", plat.photoSrc);
-                clone.querySelector('#photo-aliment').setAttribute("width", "50%");  
+                clone.querySelector('#photoAliment').setAttribute("src", plat.photoSrc);
+                clone.querySelector('#photoAliment').setAttribute("width", "50%");  
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
                 }

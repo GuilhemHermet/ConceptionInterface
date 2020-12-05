@@ -14,7 +14,7 @@
     color:white;
 }
 
-#main-container{
+#mainContainer{
     margin-top: 25px;
 }
 
@@ -22,11 +22,11 @@
     color : #008C8C;
 }
 
-#reglement-lien{
+#reglementLien{
     color: gray;
 }
 
-#submit-btn{
+#submitBtn{
     background-color : #008C8C;   
 }
 

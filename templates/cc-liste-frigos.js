@@ -80,7 +80,6 @@ class CcListeFrigos extends HTMLElement {
 
          this.getJSON("../scripts/frigos.json").then(frigo => {
 
-            //console.log(this.frigos);
             this.frigos.map(frigo => {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
@@ -115,7 +114,7 @@ class CcListeFrigos extends HTMLElement {
         console.log('attributCHanged', name, oldValue, newValue);
 
         if (name === 'frigos') {
-            this.nom = newValue;
+            this.frigos = newValue;
         }
 
     }/**/

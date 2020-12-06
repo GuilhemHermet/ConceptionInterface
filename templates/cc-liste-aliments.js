@@ -25,10 +25,22 @@ class CcListeAliments extends HTMLElement {
         return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
     }
 
-    modifierQuantitePanier(nouvelleQuantite){
-        console.log(this.quantitePanier); 
-        quantite = nouvelleQuantite; 
-        document.getElementById("btnPanier").innerHTML = quantite;
+    modifierQuantitePanier(){
+        var nomAliment = this[1].nom; 
+
+        for(var i = 0; i < this[0].plats.length; i++){
+            if (this[0].plats[i].nom == nomAliment){
+                var quantiteAliment = this[0].plats[i].quantite; 
+                if (quantiteAliment > 0){
+                    this[0].plats[i].quantite = quantiteAliment - 1; 
+                    this[1].quantite = quantiteAliment - 1; 
+                    var elementHTML = this[0]._root.getElementById("result").children[i];
+                    elementHTML.getElementsByClassName("quantite")[0].children[0].innerHTML = quantiteAliment - 1
+                    this[0].quantitePanier = this[0].quantitePanier + 1; 
+                    document.getElementById("btnPanier").innerHTML = this[0].quantitePanier;
+                }
+            }
+        }
     }
 
     //lorsque connecte'
@@ -141,7 +153,7 @@ class CcListeAliments extends HTMLElement {
         </template>
         <div id="result" class="liste-plats"></div>
     `;
-        //cree les variables avec le fragment du code encapsule'
+        //cree les variables avec le fragment du code encapsule
         this.templateContent = this._root.querySelector('#templateAliment').content; 
         
         this.result = this._root.querySelector('#result');
@@ -150,7 +162,6 @@ class CcListeAliments extends HTMLElement {
 
             this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo));
 
-            //console.log(this.frigos);
             this.plats.map(plat => {
                 if (plat.quantite > 0) {
                 //clone le templateContent
@@ -163,12 +174,36 @@ class CcListeAliments extends HTMLElement {
                 clone.querySelector('#allergenes').innerHTML = plat.allergenes;
                 clone.querySelector('#photoAliment').setAttribute("src", plat.photoSrc);
                 clone.querySelector('#photoAliment').setAttribute("width", "50%");  
+                var wrappedArguments = [this,plat];
+                clone.querySelector('button').addEventListener('click', this.modifierQuantitePanier.bind(wrappedArguments));
                 //ajoute le clone au shadow DOM
                 this.result.appendChild(clone);    
                 }
             });
         })
+
+        
     }
+
+    static get observedAttributes() {
+        return ["frigo", "quantitePanier", "plats"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        this._root.getElementById(name).innerHTML=newValue;   
+        console.log('attributChanged', name, oldValue, newValue);
+
+        if (name === 'frigo') {
+            this.frigo = newValue;
+        }
+        if (name === 'quantitePanier') {
+            this.quantitePanier = newValue;
+        }
+        if (name === 'plats') {
+            this.plats = newValue;
+        }
+
+    }/**/
 
 
 }//fin de la classe

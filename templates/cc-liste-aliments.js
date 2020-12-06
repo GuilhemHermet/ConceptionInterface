@@ -19,6 +19,7 @@ class CcListeAliments extends HTMLElement {
           this.frigo = search_params.get('frigo');
           console.log(this.frigo);
         }	 
+
     }
     
     getJSON(path){
@@ -109,7 +110,6 @@ class CcListeAliments extends HTMLElement {
                 padding-bottom: 3px;
             }
 
-
             .sous-paragraphe {
                 font-size: 13px;
                 margin: 3px; 
@@ -134,11 +134,9 @@ class CcListeAliments extends HTMLElement {
                         <button class="add-button" id="btnAjout" title="Ajouter au panier">+</i></button>
                     </div>   
                  </div>
-            
+
             </div>
-
-
-        </template>
+        </template>        
         <div id="result" class="liste-plats"></div>
     `;
         //cree les variables avec le fragment du code encapsule'
@@ -148,14 +146,14 @@ class CcListeAliments extends HTMLElement {
 
         this.getJSON("../scripts/plats.json").then(() => {
 
-            this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo));
+            this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo))
 
             //console.log(this.frigos);
             this.plats.map(plat => {
                 if (plat.quantite > 0) {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
-                //met 'a jour le clone avec les donnees de chaque vehicule si demande
+                //met 'a jour le clone avec les donnees de chaque plat si demande
                 clone.querySelector('#nom').innerHTML = plat.nom;
                 clone.querySelector('#categorie').innerHTML = plat.categorie;   
                 clone.querySelector('#datePeremption').innerHTML = plat.dateDePeremption;

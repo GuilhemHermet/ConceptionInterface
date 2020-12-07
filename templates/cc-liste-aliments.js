@@ -2,18 +2,18 @@ class CcListeAliments extends HTMLElement {
     constructor() {
         super();//heriter les attributs et methodes de HTMLElement
 
-        //obtient le shadow root pour recevoir le code encapsule'
+        //obtient le shadow root pour recevoir le code encapsulé
         this._root = this.attachShadow({ mode: 'open' });
 
-        //proprietes
+        //propriétés
         this.platsTemp = [];
         this.plats = [];
         this.frigo = '';
         this.quantitePanier = 0; 
 
         // Récupération du frigo courant
-        var str = window.location.href;
-        var url = new URL(str);
+        var urlStr = window.location.href;
+        var url = new URL(urlStr);
         var search_params = new URLSearchParams(url.search); 
         if(search_params.has('frigo')) {
           this.frigo = search_params.get('frigo');
@@ -23,13 +23,13 @@ class CcListeAliments extends HTMLElement {
     }
     
     getJSON(path){
-        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
+        return fetch(path).then(response => response.json()).then(json => this.platsTemp = json.plats); 
     }
 
     modifierQuantitePanier(){
         var nomAliment = this[1].nom; 
 
-        for(var i = 0; i < this[0].plats.length; i++){
+        for(var i = 0; i < this[0].plats.length; i++){
             if (this[0].plats[i].nom == nomAliment){
                 var quantiteAliment = this[0].plats[i].quantite; 
                 if (quantiteAliment > 0){
@@ -37,16 +37,16 @@ class CcListeAliments extends HTMLElement {
                     this[1].quantite = quantiteAliment - 1; 
                     var elementHTML = this[0]._root.getElementById("result").children[i];
                     elementHTML.getElementsByClassName("quantite")[0].children[0].innerHTML = quantiteAliment - 1
-                    this[0].quantitePanier = this[0].quantitePanier + 1; 
-                    document.getElementById("btnPanier").innerHTML = this[0].quantitePanier;
+                    sessionStorage.quantitePanier = parseInt(sessionStorage.quantitePanier) + 1; 
+                    document.getElementById("quantitePanier").innerHTML = sessionStorage.quantitePanier;
                 }
             }
         }
     }
 
-    //lorsque connecte'
+    //lorsque connecté
     connectedCallback() { 
-        //defini le code encapsule'
+        //defini le code encapsulé
         this._root.innerHTML = `
         <style>
             .liste-plats{
@@ -151,17 +151,25 @@ class CcListeAliments extends HTMLElement {
         </template>        
         <div id="result" class="liste-plats"></div>
     `;
-        //cree les variables avec le fragment du code encapsule
+        //cree les variables avec le fragment du code encapsulé
         this.templateContent = this._root.querySelector('#templateAliment').content; 
         
         this.result = this._root.querySelector('#result');
 
         this.getJSON("../scripts/plats.json").then(() => {
 
-            this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo))
+            // Filtrer les plats qui correspondent au frigo courant
+            this.plats = this.platsTemp.filter(plat => plat.frigos.includes(this.frigo));
+
+            // Récupérer la quantité de plats dans le panier de l'utilisateur (ou l'initialiser à 0)
+            if (!sessionStorage.quantitePanier || sessionStorage.quantitePanier == 'NaN') {
+                sessionStorage.quantitePanier = 0;
+            }
+            document.getElementById('quantitePanier').innerHTML = sessionStorage.quantitePanier;
+            
 
             this.plats.map(plat => {
-                if (plat.quantite > 0) {
+                if (plat.quantite > 0) {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
                 //met 'a jour le clone avec les donnees de chaque plat si demande

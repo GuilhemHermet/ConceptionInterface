@@ -2,20 +2,20 @@ class CcListeFrigos extends HTMLElement {
     constructor() {
         super();//heriter les attributs et methodes de HTMLElement
 
-        //obtient le shadow root pour recevoir le code encapsule'
+        //obtient le shadow root pour recevoir le code encapsulé
         this._root = this.attachShadow({ mode: 'open' });
 
-        //proprietes
+        //propriétés
         this.frigos = []; 
     }
 
     getJSON(path){
-        return fetch(path).then(response => response.json()).then(json => this.frigos = json.frigos); 
+        return fetch(path).then(response => response.json()).then(json => this.frigos = json.frigos); 
     }
 
-    //lorsque connecte'
+    //lorsque connecté
     connectedCallback() { 
-        //defini le code encapsule'
+        //defini le code encapsulé
         this._root.innerHTML = `
         <style>
         .grid-container {
@@ -73,17 +73,23 @@ class CcListeFrigos extends HTMLElement {
         </template>
         <div id="result"></div>
     `;
-        //cree les variables avec le fragment du code encapsule'
+        //cree les variables avec le fragment du code encapsulé
         this.templateContent = this._root.querySelector('#templateFrigo').content;
         
         this.result = this._root.querySelector('#result');
 
-         this.getJSON("../scripts/frigos.json").then(frigo => {
+         this.getJSON("../scripts/frigos.json").then(frigo => {
+
+            // Récupérer la quantité de plats dans le panier de l'utilisateur (ou l'initialiser à 0)
+            if (!sessionStorage.quantitePanier || sessionStorage.quantitePanier == 'NaN') {
+                sessionStorage.quantitePanier = 0;
+            }
+            document.getElementById('quantitePanier').innerHTML = sessionStorage.quantitePanier;
 
             this.frigos.map(frigo => {
                 //clone le templateContent
                 const clone = document.importNode(this.templateContent, true);
-                //met 'a jour le clone avec les donnees de chaque vehicule si demande
+
                 clone.querySelector('#nom').innerHTML = frigo.nom;
                 clone.querySelector('#adresse').innerHTML = frigo.adresse;
                 clone.querySelector('#distance').innerHTML = frigo.distance;
@@ -124,4 +130,4 @@ class CcListeFrigos extends HTMLElement {
 }//fin de la classe
 
 //registre de la classe en dehors de la classe
-window.customElements.define('cc-liste-frigos', CcListeFrigos); //
+window.customElements.define('cc-liste-frigos', CcListeFrigos);

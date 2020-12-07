@@ -4,9 +4,14 @@
 }
   
 #panier {
-  padding-right: 2%;
+  margin-right: 10px;
 }
 
 #retour {
   padding-left: 5%;
+}
+
+#quantitePanier{
+  font-weight: bold;
+  font-size: 17px;
 }

@@ -10,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../scripts/script-inscription.js"></script>
     <script src="../scripts/script-connexion.js"></script>
-    <script src="../scripts/script.js"></script>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- JS, Popper.js, and jQuery -->
@@ -23,147 +22,145 @@
 
 
 </head>
-    <body id="body">
-        <div class="header">
-            <div class="title-sign-in">
-                <div class="left-title-div"></div>
-                <div class="center-title-div">
-                    <h1 id="titre">Frigocommunautaire</h1>
-                </div>
-                <div class="right-title-div">
-                    <button class="btn-member" data-toggle="modal" data-target="#modalConnexion"><i class="fas fa-sign-in-alt" id="btn-member"></i></button>
-                    <div id="membres">Membres</div>
-                </div>
+<body>
+    <div class="header">
+        <div class="title-sign-in">
+            <div class="left-title-div"></div>
+            <div class="center-title-div">
+                <h1 id="titre">Frigocommunautaire</h1>
+            </div>
+            <div class="right-title-div">
+                <button class="btn-member" data-toggle="modal" data-target="#modalConnexion"><i class="fas fa-sign-in-alt" id="btn-member"></i></button>
+                <div id="membres">Membres</div>
             </div>
         </div>
+    </div>
 
-        <div class="body-container">
-            <div class="header-tabs">
-                <ul id="navigationBar">
-                    <li><a href="../pages/mission.html" class="header-title">Mission</a></li>
-                    <li><a href="../pages/stats.html" class="header-title">Stats</a></li>
-                    <li><a href="../pages/reglement.html" class="header-title">Règlement</a></li>
-                    <li class="active-tab"><a class=" header-title" href="../pages/inscription.html">Inscription</a></li>
-                </ul>
-            </div> 
-        
-            <div class="body">
-                <div class="container" id="main-container">
-                    <form action="" method="post" id="formInscription">
-                        <div class="form-ligne form-group">
-                            <label class="text-label pl-2" for="name"> 
-                                <span class="font-weight-bold">
-                                    Nom complet
-                                </span> 
-                                (prénom + nom de famille) 
-                            </label>
-                            <div class="text-enter">
-                                <input class="form-control form-control-sm" type="text" name="name" id="name" >
-                            </div>  
+    <div class="body-container">
+        <div class="header-tabs">
+            <ul id="navigationBar">
+                <li><a href="../pages/mission.html" class="header-title">Mission</a></li>
+                <li><a href="../pages/stats.html" class="header-title">Stats</a></li>
+                <li><a href="../pages/reglement.html" class="header-title">Règlement</a></li>
+                <li class="active-tab"><a class=" header-title" href="../pages/inscription.html">Inscription</a></li>
+            </ul>
+        </div> 
+    
+        <div class="body">
+            <div class="container" id="main-container">
+                <form action="" method="post" id="formInscription">
+                    <div class="form-ligne form-group">
+                        <label class="text-label pl-2" for="name"> 
+                            <span class="font-weight-bold">
+                                Nom complet
+                            </span> 
+                            (prénom + nom de famille) 
+                        </label>
+                        <div class="text-enter">
+                            <input class="form-control form-control-sm" type="text" name="name" id="name" >
+                        </div>  
+                    </div>
+                    <div class="form-ligne form-group">
+                        <label class="text-label pl-2" for="email">
+                            <span class="font-weight-bold">
+                                E-mail
+                            </span> 
+                            (sera votre nom d'utilisateur) 
+                        </label>
+                        <div class="text-enter">
+                            <input class="form-control form-control-sm" type="email" name="email" id="email" >   
                         </div>
-                        <div class="form-ligne form-group">
-                            <label class="text-label pl-2" for="email">
-                                <span class="font-weight-bold">
-                                    E-mail
-                                </span> 
-                                (sera votre nom d'utilisateur) 
-                            </label>
-                            <div class="text-enter">
-                                <input class="form-control form-control-sm" type="email" name="email" id="email" >   
-                            </div>
-                        </div>
-                        <div class="form-ligne form-group">
-                            <label class="text-label pl-2" for="password">
-                                <span class="font-weight-bold">
-                                    Mot de passe 
-                                </span>
-                                (mélange de lettres et de chiffres) 
-                            </label>
-                            <div class="text-enter">
-                                <input class="form-control form-control-sm" id="verifChamp1" type="password" name="password">
-                            </div>  
-                        </div>
-                        <div class="form-ligne form-group" id="formConfirm">
-                            <label class="text-label pl-2" for="password-confirm">
-                                <span class="font-weight-bold">
-                                    Mot de passe
-                                </span> 
-                                (confirmation) 
-                            </label>
-                            <div class="text-enter">  
-                                <input class="form-control form-control-sm" id="verifChamp2" type="password" name="passwordConfirm">
-                            </div>  
-                        </div>
-                        <div id="verifChamp3Nom" class="form-check pl-0">
-                            <input type="checkbox" name="checkbox" id="checkbox" class="verif-champ3">
-                            <label class="form-check-label text-muted" for="checkbox">J'ai lu et j'accepte le <a id="reglementLien" href="https://google.com">règlement</a> </label>
-                        </div>
-                        <div class="form-submit float-right mt-4">
-                            <input id="submitBtn" class="btn btn-info btn-sm " type="submit" value="Je confirme mon inscription">
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-ligne form-group">
+                        <label class="text-label pl-2" for="password">
+                            <span class="font-weight-bold">
+                                Mot de passe 
+                            </span>
+                            (mélange de lettres et de chiffres) 
+                        </label>
+                        <div class="text-enter">
+                            <input class="form-control form-control-sm" id="verifChamp1" type="password" name="password">
+                        </div>  
+                    </div>
+                    <div class="form-ligne form-group" id="formConfirm">
+                        <label class="text-label pl-2" for="password-confirm">
+                            <span class="font-weight-bold">
+                                Mot de passe
+                            </span> 
+                            (confirmation) 
+                        </label>
+                        <div class="text-enter">  
+                            <input class="form-control form-control-sm" id="verifChamp2" type="password" name="passwordConfirm">
+                        </div>  
+                    </div>
+                    <div id="verifChamp3Nom" class="form-check pl-0">
+                        <input type="checkbox" name="checkbox" id="checkbox" class="verif-champ3">
+                        <label class="form-check-label text-muted" for="checkbox">J'ai lu et j'accepte le <a id="reglementLien" href="https://google.com">règlement</a> </label>
+                    </div>
+                    <div class="form-submit float-right mt-4">
+                        <input id="submitBtn" class="btn btn-info btn-sm " type="submit" value="Je confirme mon inscription">
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Bienvenue</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                Félicitations et bienvenues à Frigocommunautaires.com.<br/>
+                Accédez à l'espace membre et dès aujourd'hui commencez à partager vos excédents de nourriture.
+            </div>
+            <div class="modal-footer">
+            
+            <button type="button" class="btn btn-primary" id="retourMission">OK</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalConnexion" tabindex="-1" role="dialog" aria-labelledby="modalConnexionTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Bienvenue</h5>
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalConnexionTitle">Accès à l'espace membre</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">&times;</span>
                 </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-ligne form-group">
+                    <label class="pl-2" for="username"> 
+                        Nom d'utilisateur
+                    </label>
+                    <div class="text-enter">
+                        <input class="form-control form-control-lg" type="text" name="username" id="username">
+                    </div>  
                 </div>
-                <div class="modal-body">
-                    Félicitations et bienvenues à Frigocommunautaires.com.<br/>
-                    Accédez à l'espace membre et dès aujourd'hui commencez à partager vos excédents de nourriture.
+                <div class="form-ligne form-group">
+                    <label class="pl-2" for="password"> 
+                        Mot de passe
+                    </label>
+                    <div class="text-enter">
+                        <input class="form-control form-control-lg" type="password" name="password" id="password" required>
+                    </div>  
                 </div>
-                <div class="modal-footer">
-                
-                <button type="button" class="btn btn-primary" id="retourMission">OK</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn inversely-colored" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn lightly-colored btn-lg" id="connexion">Connecter</button>
             </div>
             </div>
         </div>
-
-        <div class="modal fade" id="modalConnexion" tabindex="-1" role="dialog" aria-labelledby="modalConnexionTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalConnexionTitle">Accès à l'espace membre</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-ligne form-group">
-                        <label class="pl-2" for="username"> 
-                            Nom d'utilisateur
-                        </label>
-                        <div class="text-enter">
-                            <input class="form-control form-control-lg" type="text" name="username" id="username">
-                        </div>  
-                    </div>
-                    <div class="form-ligne form-group">
-                        <label class="pl-2" for="password"> 
-                            Mot de passe
-                        </label>
-                        <div class="text-enter">
-                            <input class="form-control form-control-lg" type="password" name="password" id="password" required>
-                        </div>  
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn inversely-colored" data-dismiss="modal">Annuler</button>
-                  <button type="button" class="btn lightly-colored btn-lg" id="connexion">Connecter</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-       
-    </body>
+        </div>
+</body>
 </html>

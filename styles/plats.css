@@ -1,7 +1,12 @@
 #panier {
-    padding-right: 2%;
+    padding-right: 10px;
 }
 
 #retour {
   padding-left: 5%;
+}
+
+#quantitePanier{
+  font-weight: bold;
+  font-size: 17px;
 }

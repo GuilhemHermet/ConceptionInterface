@@ -96,6 +96,8 @@ class CcListeFrigos extends HTMLElement {
                 if (frigo.disponible === "false") {
                     clone.querySelector('#raisonNonDisponibilite').innerHTML = frigo.statut;
                     clone.querySelector('#photoFrigo').setAttribute("src", '../assets/FrigoRouge.png');
+                    clone.querySelector('#photoFrigo').setAttribute("style", 'cursor: not-allowed');
+                    clone.querySelector('#navigationPlats').setAttribute("style", 'cursor: not-allowed');
                 }
                 else {
                     clone.querySelector('#photoFrigo').setAttribute("src", '../assets/FrigoVert.png');
